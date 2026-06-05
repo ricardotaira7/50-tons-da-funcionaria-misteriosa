@@ -554,9 +554,108 @@
       transition-duration: 0.01ms !important;
     }
   }
+
+  /* ============ PLAYER DE MÚSICA ============ */
+  #music-player-frame {
+    position: fixed;
+    bottom: -200px;
+    left: -200px;
+    width: 100px;
+    height: 100px;
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  #music-toggle {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, rgba(20,20,26,0.9), rgba(10,10,10,0.95));
+    border: 1px solid var(--border-strong);
+    color: var(--silver-glow);
+    cursor: pointer;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(8px);
+    transition: all 0.4s ease;
+    font-size: 18px;
+    padding: 0;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+  }
+
+  #music-toggle:hover {
+    border-color: var(--silver-glow);
+    transform: scale(1.05);
+  }
+
+  #music-toggle.playing {
+    border-color: var(--silver-glow);
+    box-shadow: 0 0 18px rgba(224, 218, 201, 0.25);
+  }
+
+  #music-toggle svg {
+    width: 18px;
+    height: 18px;
+    fill: currentColor;
+  }
+
+  #music-toggle .icon-pause { display: none; }
+  #music-toggle.playing .icon-play { display: none; }
+  #music-toggle.playing .icon-pause { display: block; }
+
+  #music-toggle .label {
+    position: absolute;
+    right: 58px;
+    background: rgba(20,20,26,0.95);
+    color: var(--silver);
+    padding: 6px 12px;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    font-family: 'Cinzel', serif;
+    font-size: 9px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    white-space: nowrap;
+    opacity: 0;
+    transform: translateX(8px);
+    transition: all 0.3s ease;
+    pointer-events: none;
+  }
+
+  #music-toggle:hover .label {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  @media (max-width: 480px) {
+    #music-toggle {
+      bottom: 16px;
+      right: 16px;
+      width: 44px;
+      height: 44px;
+    }
+    #music-toggle .label { display: none; }
+  }
 </style>
 </head>
 <body>
+
+<!-- Player de música (iframe escondido + controle) -->
+<div id="music-player-frame"></div>
+<button id="music-toggle" type="button" aria-label="Tocar m&uacute;sica de fundo" title="M&uacute;sica de fundo">
+  <svg class="icon-play" viewBox="0 0 24 24" aria-hidden="true">
+    <path d="M8 5v14l11-7z"/>
+  </svg>
+  <svg class="icon-pause" viewBox="0 0 24 24" aria-hidden="true">
+    <path d="M6 5h4v14H6zm8 0h4v14h-4z"/>
+  </svg>
+  <span class="label">Trilha sonora</span>
+</button>
 
 <!-- ============ CAPA ============ -->
 <section class="cover">
@@ -807,45 +906,11 @@
 <article class="chapter">
   <div class="container reveal">
     <div class="chapter-num">Cap&iacute;tulo VII</div>
-    <h2 class="chapter-title">O Primeiro Encontro</h2>
-    <div class="chapter-deck">duas horas de conversa, e a primeira fuga</div>
-
-    <p class="lead">
-      Sa&iacute;mos uma vez. Conversa boa, das que a gente n&atilde;o v&ecirc; o tempo passar. Ela &eacute; <em>inteligente, ir&ocirc;nica, observadora</em> &mdash; daquelas pessoas que fariam qualquer terapeuta perder o emprego. Eu ficaria horas ali, ouvindo, respondendo, rindo.
-    </p>
-
-    <p>
-      A&iacute; ela olha pro rel&oacute;gio. <strong>"Preciso ir pra casa."</strong>
-    </p>
-
-    <p>
-      Eu, que sou observador (e otimista profissional), li o seguinte: ela estava com a qu&iacute;mica subindo, sentindo o que fer&ocirc;monio costuma fazer, e decidiu sair de cena <em>antes</em> que algo acontecesse. Respeito. N&atilde;o tem nada de errado em recuar quando o pr&oacute;prio corpo come&ccedil;a a virar contra o pr&oacute;prio plano.
-    </p>
-
-    <div class="aside">
-      <span class="aside-label">Tradu&ccedil;&atilde;o do flerte</span>
-      "Tenho que ir" pode significar:<br>
-      <em>(a)</em> tenho mesmo que ir; <em>(b)</em> n&atilde;o confio em mim aqui; <em>(c)</em> n&atilde;o confio em <strong>voc&ecirc;</strong> aqui; ou <em>(d)</em> todas as anteriores.<br>
-      No meu caso, prefiro acreditar no (b). &Eacute; mais bonito pro di&aacute;rio.
-    </div>
-
-    <p>
-      Beijo no rosto, tchau elegante, e eu fui pra casa com a sensa&ccedil;&atilde;o de que aquela hist&oacute;ria, finalmente, tinha sa&iacute;do do plano puramente imagin&aacute;rio. <em>Spoiler:</em> ela ia sair muito mais. Inclusive do plano horizontal pro vertical, em formato de escadaria. Mas isso fica para o pr&oacute;ximo cap&iacute;tulo.
-    </p>
-  </div>
-</article>
-
-<div class="container"><div class="divider"><span>&middot; &middot; &middot;</span></div></div>
-
-<!-- ============ CAPÍTULO VIII ============ -->
-<article class="chapter">
-  <div class="container reveal">
-    <div class="chapter-num">Cap&iacute;tulo VIII</div>
     <h2 class="chapter-title">O Primeiro Beijo (no Quinto Andar)</h2>
     <div class="chapter-deck">escadaria, parede, fofoca falsa e um beijo curativo</div>
 
     <p class="lead">
-      No dia seguinte ao primeiro encontro, antes da gente se despedir de vez, eu tive uma ideia. Daquelas ideias de homem com tes&atilde;o e plano de fundo &mdash; perigosas, mas eficientes. Convidei ela pra subir at&eacute; a minha academia, que ficava no <strong>segundo andar</strong>.
+      Antes de qualquer encontro fora do trabalho, antes de qualquer sa&iacute;da formal, antes de qualquer combinado de hor&aacute;rio &mdash; eu tive uma ideia. Daquelas ideias de homem com tes&atilde;o e plano de fundo, perigosas, mas eficientes. Convidei ela pra subir at&eacute; a minha academia, que ficava no <strong>segundo andar</strong>.
     </p>
 
     <p>
@@ -892,15 +957,15 @@
 
 <div class="container"><div class="divider"><span>&middot; &middot; &middot;</span></div></div>
 
-<!-- ============ CAPÍTULO IX ============ -->
+<!-- ============ CAPÍTULO VIII ============ -->
 <article class="chapter">
   <div class="container reveal">
-    <div class="chapter-num">Cap&iacute;tulo IX</div>
+    <div class="chapter-num">Cap&iacute;tulo VIII</div>
     <h2 class="chapter-title">A Despedida da Funcion&aacute;ria Cabe&ccedil;uda</h2>
-    <div class="chapter-deck">carona, restri&ccedil;&otilde;es, e o segundo beijo no carro</div>
+    <div class="chapter-deck">o primeiro encontro de verdade: carona, restri&ccedil;&otilde;es, beijo no carro</div>
 
     <p class="lead">
-      Aconteceu de uma colega da institui&ccedil;&atilde;o se despedir do cargo &mdash; a famosa <strong>Funcion&aacute;ria Cabe&ccedil;uda</strong>. Codinome carinhoso, refer&ecirc;ncia direta &agrave; teimosia not&oacute;ria dela em qualquer reuni&atilde;o. Marcaram uma despedida noturna. Eu nem estava muito a fim, mas o universo me ofereceu uma oportunidade de planejamento estrat&eacute;gico, e eu n&atilde;o podia recusar.
+      Aconteceu de uma colega da institui&ccedil;&atilde;o se despedir do cargo &mdash; a famosa <strong>Funcion&aacute;ria Cabe&ccedil;uda</strong>. Codinome carinhoso e absolutamente literal: cabe&ccedil;a generosa, testa em formato de outdoor publicit&aacute;rio. Se voc&ecirc; precisasse projetar slides numa reuni&atilde;o sem disponibilidade de TV, era s&oacute; pedir pra ela ficar parada. <em>Quadrinho ambulante</em>, no melhor sentido carinhoso da palavra. Marcaram uma despedida noturna. Eu nem estava muito a fim, mas o universo me ofereceu uma oportunidade de planejamento estrat&eacute;gico, e eu n&atilde;o podia recusar.
     </p>
 
     <p>
@@ -921,7 +986,7 @@
     </p>
 
     <p>
-      Ainda assim, beijar ela com calma, mesmo dentro da janela apertada que ela me deu, valeu cada segundo. Beijo de quem j&aacute; queria fazer aquilo h&aacute; <em>oito anos</em>. Beijo com peso de hist&oacute;ria. Beijo que, mesmo dentro de uma cabine apertada e com cron&ocirc;metro correndo, conseguiu existir inteiro.
+      Ainda assim, beijar ela com calma, mesmo dentro da janela apertada que ela me deu, valeu cada segundo. Beijo de quem j&aacute; queria fazer aquilo h&aacute; <em>oito anos</em>. Beijo com peso de hist&oacute;ria. Beijo que, mesmo dentro de uma cabine apertada e com cron&ocirc;metro correndo, conseguiu existir inteiro. Foi o <strong>primeiro encontro de verdade</strong> &mdash; longe do pr&eacute;dio, longe do trabalho, longe da escadaria que ela tinha decretado proibida.
     </p>
 
     <p class="joke">
@@ -937,7 +1002,7 @@
 <!-- ============ CAPÍTULO X ============ -->
 <article class="chapter">
   <div class="container reveal">
-    <div class="chapter-num">Cap&iacute;tulo X</div>
+    <div class="chapter-num">Cap&iacute;tulo IX</div>
     <h2 class="chapter-title">Almo&ccedil;o de Motel &amp; o Bolo no Sol</h2>
     <div class="chapter-deck">a manh&atilde; em que eu planejei demais, e o sol castigou tudo</div>
 
@@ -983,7 +1048,7 @@
 <!-- ============ CAPÍTULO X.5 - A NOITE ============ -->
 <article class="chapter">
   <div class="container reveal">
-    <div class="chapter-num">Cap&iacute;tulo X &middot; segunda parte</div>
+    <div class="chapter-num">Cap&iacute;tulo IX &middot; segunda parte</div>
     <h2 class="chapter-title">Short, Perfume &amp; Posto de Gasolina</h2>
     <div class="chapter-deck">a noite em que o tes&atilde;o subiu e o cron&ocirc;metro derrubou</div>
 
@@ -1042,7 +1107,7 @@
 <!-- ============ CAPÍTULO X.6 - O CHEFE SOBRINHO ============ -->
 <article class="chapter">
   <div class="container reveal">
-    <div class="chapter-num">Cap&iacute;tulo X &middot; terceira parte</div>
+    <div class="chapter-num">Cap&iacute;tulo IX &middot; terceira parte</div>
     <h2 class="chapter-title">A Revela&ccedil;&atilde;o do Chefe Sobrinho</h2>
     <div class="chapter-deck">quando o tes&atilde;o trope&ccedil;a num detalhe institucional</div>
 
@@ -1080,7 +1145,7 @@
 <!-- ============ CAPÍTULO X.7 - JOGUINHOS E NÍVEIS ============ -->
 <article class="chapter">
   <div class="container reveal">
-    <div class="chapter-num">Cap&iacute;tulo X &middot; quarta parte</div>
+    <div class="chapter-num">Cap&iacute;tulo IX &middot; quarta parte</div>
     <h2 class="chapter-title">Os N&iacute;veis e o Hacker Sem Manual</h2>
     <div class="chapter-deck">o jogo dela, as regras dela, e o cara de TI sem documenta&ccedil;&atilde;o</div>
 
@@ -1126,7 +1191,7 @@
 <!-- ============ CAPÍTULO XI ============ -->
 <article class="chapter">
   <div class="container reveal">
-    <div class="chapter-num">Cap&iacute;tulo XI</div>
+    <div class="chapter-num">Cap&iacute;tulo X</div>
     <h2 class="chapter-title">A Mulher que Odeia Conversar Online</h2>
     <div class="chapter-deck">presencialmente: orador grego &middot; digitalmente: pedra</div>
 
@@ -1156,7 +1221,7 @@
 <!-- ============ CAPÍTULO XII ============ -->
 <article class="chapter">
   <div class="container reveal">
-    <div class="chapter-num">Cap&iacute;tulo XII</div>
+    <div class="chapter-num">Cap&iacute;tulo XI</div>
     <h2 class="chapter-title">Onde Eu Perdi a Linha</h2>
     <div class="chapter-deck">uma autocr&iacute;tica em tr&ecirc;s tempos</div>
 
@@ -1186,7 +1251,7 @@
 <!-- ============ CAPÍTULO XIII ============ -->
 <article class="chapter">
   <div class="container reveal">
-    <div class="chapter-num">Cap&iacute;tulo XIII</div>
+    <div class="chapter-num">Cap&iacute;tulo XII</div>
     <h2 class="chapter-title">A Apego-Holic</h2>
     <div class="chapter-deck">"eu me apego f&aacute;cil", disse ela, sumindo em seguida</div>
 
@@ -1305,6 +1370,69 @@
     <div class="watermark">Edi&ccedil;&atilde;o de Bolso &middot; MMXXVI</div>
   </div>
 </section>
+
+<script>
+  // ============ PLAYER DE MÚSICA DE FUNDO ============
+  let ytPlayer = null;
+  let ytReady = false;
+  const VIDEO_ID = 'WJpaTTaKhj8';
+  const VOLUME = 15; // 0-100, bem baixo para ficar de fundo
+
+  // Carrega API do YouTube
+  const tag = document.createElement('script');
+  tag.src = 'https://www.youtube.com/iframe_api';
+  document.head.appendChild(tag);
+
+  window.onYouTubeIframeAPIReady = function() {
+    ytPlayer = new YT.Player('music-player-frame', {
+      height: '100',
+      width: '100',
+      videoId: VIDEO_ID,
+      playerVars: {
+        autoplay: 0,
+        controls: 0,
+        disablekb: 1,
+        fs: 0,
+        iv_load_policy: 3,
+        loop: 1,
+        modestbranding: 1,
+        playlist: VIDEO_ID,
+        rel: 0,
+        showinfo: 0
+      },
+      events: {
+        onReady: function(e) {
+          ytReady = true;
+          e.target.setVolume(VOLUME);
+        },
+        onStateChange: function(e) {
+          // Loop manual de seguran&ccedil;a (caso o loop nativo falhe)
+          if (e.data === YT.PlayerState.ENDED) {
+            e.target.playVideo();
+          }
+        }
+      }
+    });
+  };
+
+  // Bot&atilde;o de play/pause
+  const musicToggle = document.getElementById('music-toggle');
+  let playing = false;
+
+  musicToggle.addEventListener('click', function() {
+    if (!ytReady || !ytPlayer) return;
+    if (playing) {
+      ytPlayer.pauseVideo();
+      musicToggle.classList.remove('playing');
+      playing = false;
+    } else {
+      ytPlayer.setVolume(VOLUME);
+      ytPlayer.playVideo();
+      musicToggle.classList.add('playing');
+      playing = true;
+    }
+  });
+</script>
 
 <script>
   const observer = new IntersectionObserver((entries) => {
