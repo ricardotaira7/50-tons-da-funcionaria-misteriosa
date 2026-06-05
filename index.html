@@ -1,0 +1,1323 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+<meta name="theme-color" content="#0a0a0a">
+<title>50 Tons da Funcion&aacute;ria Misteriosa</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Inter:wght@300;400;500;600&family=Cinzel:wght@500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg-deep: #0a0a0a;
+    --bg-soft: #14141a;
+    --bg-card: #1a1a22;
+    --ink-strong: #f5f3ee;
+    --ink-body: #d4d0c8;
+    --ink-mute: #8b8782;
+    --silver: #b8b3a8;
+    --silver-glow: #e0dac9;
+    --steel: #5a5a64;
+    --shadow-grey: #2a2a32;
+    --accent: #b89d7a;
+    --accent-glow: #d4b896;
+    --border: rgba(184, 179, 168, 0.18);
+    --border-strong: rgba(184, 179, 168, 0.4);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
+
+  html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+
+  body {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    background: var(--bg-deep);
+    color: var(--ink-body);
+    line-height: 1.7;
+    font-size: 21px;
+    overflow-x: hidden;
+    background-image:
+      radial-gradient(ellipse at top, rgba(90, 90, 100, 0.18), transparent 50%),
+      radial-gradient(ellipse at bottom, rgba(184, 157, 122, 0.06), transparent 60%);
+    background-attachment: fixed;
+  }
+
+  body::before {
+    content: '';
+    position: fixed; inset: 0;
+    background-image:
+      repeating-linear-gradient(0deg, transparent 0, transparent 2px, rgba(255,255,255,0.006) 2px, rgba(255,255,255,0.006) 4px);
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  body::after {
+    content: '';
+    position: fixed; inset: 0;
+    background: radial-gradient(ellipse at center, transparent 40%, rgba(0,0,0,0.65) 100%);
+    pointer-events: none;
+    z-index: 2;
+  }
+
+  .container {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 22px;
+    position: relative;
+    z-index: 10;
+  }
+
+  /* ============ CAPA ============ */
+  .cover {
+    min-height: 100vh;
+    min-height: 100svh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 60px 22px;
+    position: relative;
+  }
+
+  .cover-frame {
+    border: 1px solid var(--border-strong);
+    padding: 54px 30px;
+    position: relative;
+    background: linear-gradient(180deg, rgba(20,20,26,0.65), rgba(10,10,10,0.92));
+    backdrop-filter: blur(2px);
+    width: 100%;
+    max-width: 540px;
+    animation: frameIn 1.4s ease-out;
+  }
+
+  @keyframes frameIn {
+    0% { opacity: 0; transform: scale(0.96); }
+    100% { opacity: 1; transform: scale(1); }
+  }
+
+  .cover-frame::before,
+  .cover-frame::after {
+    content: '';
+    position: absolute;
+    width: 32px; height: 32px;
+    border: 1px solid var(--silver);
+  }
+  .cover-frame::before { top: -1px; left: -1px; border-right: none; border-bottom: none; }
+  .cover-frame::after { bottom: -1px; right: -1px; border-left: none; border-top: none; }
+
+  .cover-tag {
+    font-family: 'Cinzel', serif;
+    font-size: 12px;
+    letter-spacing: 0.4em;
+    color: var(--silver);
+    margin-bottom: 26px;
+    text-transform: uppercase;
+    animation: fadeIn 1.6s ease 0.4s both;
+  }
+
+  .cover-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 500;
+    font-style: italic;
+    font-size: clamp(42px, 10vw, 64px);
+    line-height: 1.05;
+    color: var(--ink-strong);
+    margin-bottom: 8px;
+    letter-spacing: -0.01em;
+    animation: fadeIn 1.6s ease 0.7s both;
+  }
+
+  .cover-title .of {
+    display: block;
+    font-size: 0.42em;
+    font-style: normal;
+    letter-spacing: 0.5em;
+    color: var(--silver);
+    margin: 14px 0 6px;
+    font-family: 'Cinzel', serif;
+    font-weight: 500;
+  }
+
+  .cover-title .her {
+    display: block;
+    font-size: 0.95em;
+    font-style: italic;
+    background: linear-gradient(180deg, var(--silver-glow), var(--silver) 60%, var(--steel));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .cover-sub {
+    font-size: 15px;
+    letter-spacing: 0.3em;
+    color: var(--ink-mute);
+    margin-top: 28px;
+    text-transform: uppercase;
+    font-family: 'Inter', sans-serif;
+    font-weight: 300;
+    animation: fadeIn 1.6s ease 1s both;
+  }
+
+  .cover-warn {
+    margin-top: 36px;
+    font-style: italic;
+    font-size: 17px;
+    color: var(--ink-mute);
+    line-height: 1.6;
+    max-width: 380px;
+    margin-left: auto;
+    margin-right: auto;
+    animation: fadeIn 1.6s ease 1.3s both;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .scroll-hint {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 12px;
+    letter-spacing: 0.35em;
+    color: var(--ink-mute);
+    text-transform: uppercase;
+    font-family: 'Inter', sans-serif;
+    opacity: 0.7;
+  }
+
+  /* ============ EPÍGRAFE ============ */
+  .epigraph {
+    padding: 90px 22px;
+    text-align: center;
+  }
+
+  .epigraph blockquote {
+    font-style: italic;
+    font-size: clamp(20px, 5vw, 26px);
+    color: var(--ink-body);
+    line-height: 1.6;
+    max-width: 560px;
+    margin: 0 auto;
+    position: relative;
+  }
+
+  .epigraph blockquote::before {
+    content: '\201C';
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 90px;
+    color: var(--silver);
+    opacity: 0.35;
+    position: absolute;
+    top: -45px;
+    left: -10px;
+    line-height: 1;
+  }
+
+  .epigraph cite {
+    display: block;
+    margin-top: 20px;
+    font-style: normal;
+    font-size: 14px;
+    letter-spacing: 0.3em;
+    color: var(--silver);
+    text-transform: uppercase;
+    font-family: 'Cinzel', serif;
+  }
+
+  /* ============ CAPÍTULOS ============ */
+  .chapter {
+    padding: 70px 0;
+    position: relative;
+  }
+
+  .chapter-num {
+    font-family: 'Cinzel', serif;
+    font-size: 13px;
+    letter-spacing: 0.5em;
+    color: var(--silver);
+    text-align: center;
+    margin-bottom: 14px;
+    text-transform: uppercase;
+  }
+
+  .chapter-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+    font-style: italic;
+    font-size: clamp(32px, 7.5vw, 44px);
+    color: var(--ink-strong);
+    text-align: center;
+    line-height: 1.15;
+    margin-bottom: 16px;
+    padding: 0 10px;
+    background: linear-gradient(180deg, var(--ink-strong), var(--silver));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .chapter-deck {
+    font-size: 16px;
+    color: var(--ink-mute);
+    text-align: center;
+    font-style: italic;
+    margin-bottom: 40px;
+    letter-spacing: 0.05em;
+  }
+
+  .chapter p {
+    margin-bottom: 20px;
+    font-size: clamp(19px, 4.8vw, 22px);
+    color: var(--ink-body);
+    line-height: 1.75;
+  }
+
+  .chapter p.lead::first-letter {
+    font-family: 'Cormorant Garamond', serif;
+    float: left;
+    font-size: 4.5em;
+    line-height: 0.85;
+    padding: 10px 12px 0 0;
+    color: var(--silver-glow);
+    font-style: italic;
+    font-weight: 600;
+    text-shadow: 0 2px 12px rgba(224, 218, 201, 0.2);
+  }
+
+  .chapter em {
+    color: var(--silver-glow);
+    font-style: italic;
+  }
+
+  .chapter strong {
+    color: var(--ink-strong);
+    font-weight: 600;
+  }
+
+  .aside {
+    border-left: 2px solid var(--silver);
+    background: linear-gradient(90deg, rgba(184,179,168,0.08), transparent);
+    padding: 22px 24px;
+    margin: 32px 0;
+    font-style: italic;
+    color: var(--ink-body);
+    font-size: clamp(17px, 4.4vw, 19px);
+    border-radius: 0 4px 4px 0;
+  }
+
+  .aside-label {
+    display: block;
+    font-family: 'Cinzel', serif;
+    font-size: 11px;
+    letter-spacing: 0.35em;
+    color: var(--silver);
+    margin-bottom: 10px;
+    font-style: normal;
+    text-transform: uppercase;
+  }
+
+  .joke {
+    text-align: center;
+    font-style: italic;
+    color: var(--accent-glow);
+    font-size: clamp(17px, 4.4vw, 19px);
+    margin: 28px 0;
+    padding: 18px 20px;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .divider {
+    text-align: center;
+    margin: 50px 0;
+    position: relative;
+  }
+
+  .divider::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0; right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--border-strong), transparent);
+  }
+
+  .divider span {
+    background: var(--bg-deep);
+    padding: 0 20px;
+    color: var(--silver);
+    font-size: 18px;
+    letter-spacing: 0.5em;
+    position: relative;
+    z-index: 1;
+  }
+
+  /* ============ LISTA "50 TONS" ============ */
+  .tons-list {
+    list-style: none;
+    margin: 34px 0;
+    padding: 0;
+    counter-reset: tons;
+  }
+
+  .tons-list li {
+    position: relative;
+    padding: 16px 0 16px 56px;
+    border-bottom: 1px dashed var(--border);
+    font-size: clamp(17px, 4.4vw, 19px);
+    color: var(--ink-body);
+    line-height: 1.6;
+    transition: all 0.4s ease;
+  }
+
+  .tons-list li:hover {
+    padding-left: 64px;
+    color: var(--ink-strong);
+  }
+
+  .tons-list li::before {
+    counter-increment: tons;
+    content: counter(tons, decimal-leading-zero);
+    position: absolute;
+    left: 0;
+    top: 18px;
+    font-family: 'Cinzel', serif;
+    font-size: 14px;
+    color: var(--silver);
+    letter-spacing: 0.1em;
+  }
+
+  /* ============ FIM "CONTINUA" ============ */
+  .to-be-continued {
+    text-align: center;
+    padding: 60px 22px 30px;
+  }
+
+  .to-be-continued .stamp {
+    display: inline-block;
+    border: 1px solid var(--silver);
+    padding: 14px 28px;
+    font-family: 'Cinzel', serif;
+    font-size: 13px;
+    letter-spacing: 0.5em;
+    color: var(--silver-glow);
+    text-transform: uppercase;
+    transform: rotate(-2deg);
+    background: linear-gradient(180deg, rgba(20,20,26,0.5), rgba(10,10,10,0.7));
+  }
+
+  .to-be-continued p {
+    margin-top: 28px;
+    font-style: italic;
+    font-size: clamp(17px, 4.4vw, 19px);
+    color: var(--ink-mute);
+    max-width: 480px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.7;
+  }
+
+  /* ============ ASSINATURA / FINAL ============ */
+  .signature {
+    text-align: center;
+    padding: 70px 22px 110px;
+    border-top: 1px solid var(--border);
+    margin-top: 40px;
+  }
+
+  .signature-from {
+    font-family: 'Cinzel', serif;
+    font-size: 12px;
+    letter-spacing: 0.4em;
+    color: var(--silver);
+    margin-bottom: 20px;
+    text-transform: uppercase;
+  }
+
+  .signature-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: clamp(38px, 9vw, 54px);
+    color: var(--ink-strong);
+    background: linear-gradient(180deg, var(--silver-glow), var(--silver));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    line-height: 1.1;
+  }
+
+  .signature-line {
+    width: 60%;
+    max-width: 220px;
+    height: 1px;
+    background: var(--border-strong);
+    margin: 26px auto;
+    position: relative;
+  }
+
+  .signature-line::after {
+    content: '\2756';
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--bg-deep);
+    color: var(--silver);
+    padding: 0 10px;
+    font-size: 14px;
+  }
+
+  .signature-ps {
+    font-style: italic;
+    font-size: clamp(16px, 4vw, 18px);
+    color: var(--ink-mute);
+    max-width: 440px;
+    margin: 0 auto;
+    line-height: 1.7;
+  }
+
+  .watermark {
+    margin-top: 56px;
+    font-size: 12px;
+    letter-spacing: 0.35em;
+    color: var(--ink-mute);
+    text-transform: uppercase;
+    font-family: 'Inter', sans-serif;
+    opacity: 0.55;
+  }
+
+  /* ============ ANIMAÇÕES DE ENTRADA ============ */
+  .reveal {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 1s ease, transform 1s ease;
+  }
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .reveal-scale {
+    opacity: 0;
+    transform: scale(0.94);
+    transition: opacity 1s ease, transform 1s ease;
+  }
+  .reveal-scale.visible {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  .chapter.visible p {
+    animation: paragraphIn 0.9s ease backwards;
+  }
+  .chapter.visible p:nth-child(2) { animation-delay: 0.1s; }
+  .chapter.visible p:nth-child(3) { animation-delay: 0.25s; }
+  .chapter.visible p:nth-child(4) { animation-delay: 0.4s; }
+  .chapter.visible p:nth-child(5) { animation-delay: 0.55s; }
+  .chapter.visible p:nth-child(6) { animation-delay: 0.7s; }
+  .chapter.visible p:nth-child(7) { animation-delay: 0.85s; }
+  .chapter.visible p:nth-child(8) { animation-delay: 1s; }
+
+  @keyframes paragraphIn {
+    from { opacity: 0; transform: translateY(14px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ============ MOBILE ============ */
+  @media (max-width: 480px) {
+    body { font-size: 19px; line-height: 1.72; }
+    .container { padding: 0 20px; }
+    .cover { padding: 40px 18px; }
+    .cover-frame { padding: 44px 22px; }
+    .chapter { padding: 56px 0; }
+    .chapter p { line-height: 1.72; }
+    .chapter p.lead::first-letter { font-size: 4em; }
+    .aside { padding: 18px; }
+    .epigraph { padding: 70px 18px; }
+    .signature { padding: 60px 18px 80px; }
+    .to-be-continued { padding: 50px 18px 20px; }
+  }
+
+  @supports (-webkit-touch-callout: none) {
+    body { -webkit-overflow-scrolling: touch; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ CAPA ============ -->
+<section class="cover">
+  <div class="cover-frame">
+    <div class="cover-tag">&mdash; Um Di&aacute;rio Confidencial &mdash;</div>
+    <h1 class="cover-title">
+      50 Tons
+      <span class="of">de</span>
+      <span class="her">a Funcion&aacute;ria Misteriosa</span>
+    </h1>
+    <div class="cover-sub">Edi&ccedil;&atilde;o &iacute;ntima &middot; volume &uacute;nico</div>
+    <p class="cover-warn">
+      Este di&aacute;rio cont&eacute;m doses generosas de exagero,<br>
+      uma pitada de tes&atilde;o, muito humor<br>
+      e zero compromisso com a sobriedade.
+    </p>
+  </div>
+  <div class="scroll-hint">role para baixo &#9662;</div>
+</section>
+
+<!-- ============ EPÍGRAFE ============ -->
+<section class="epigraph">
+  <div class="container">
+    <blockquote class="reveal">
+      Eu n&atilde;o sou um homem de flores e cora&ccedil;&otilde;es.<br>
+      E ela, definitivamente, n&atilde;o &eacute;<br>
+      uma mulher de respostas simples.
+      <cite>&mdash; Pref&aacute;cio de um observador inquieto</cite>
+    </blockquote>
+  </div>
+</section>
+
+<!-- ============ CAPÍTULO I ============ -->
+<article class="chapter">
+  <div class="container reveal">
+    <div class="chapter-num">Cap&iacute;tulo I</div>
+    <h2 class="chapter-title">A Lenda do Corredor</h2>
+    <div class="chapter-deck">onde a fofoca encontra a matem&aacute;tica</div>
+
+    <p class="lead">
+      Antes de eu falar com ela de verdade, ela j&aacute; era uma <em>lenda institucional</em>. Diziam de tudo. Cada corredor tinha uma vers&atilde;o, cada vers&atilde;o tinha mais tempero, e cada tempero parecia inventado pelo mesmo cara &mdash; aquele que conta hist&oacute;ria de pescador e ainda jura que o peixe falava em latim.
+    </p>
+
+    <p>
+      Eu sempre achei que fofoca de institui&ccedil;&atilde;o deveria ter um <strong>fator de corre&ccedil;&atilde;o oficial</strong>, igual c&acirc;mbio do Banco Central. Divide tudo por dois e a&iacute; voc&ecirc; chega perto da verdade.
+    </p>
+
+    <p>
+      Quando finalmente conversei direito com ela, sem terceiros, sem ru&iacute;do, ela me contou. Com aquele meio sorriso que diz <em>"eu sei o que est&atilde;o falando e t&ocirc; pouco me lixando"</em>, ela soltou a vers&atilde;o real.
+    </p>
+
+    <div class="aside">
+      <span class="aside-label">Revela&ccedil;&atilde;o</span>
+      Foi s&oacute; <em>metade</em>. Metade do que diziam. Na m&eacute;dia estat&iacute;stica da fofoca corporativa brasileira, isso praticamente a transforma em freira.
+    </div>
+
+    <p class="joke">
+      (Brincadeira, &eacute; claro &mdash; esse di&aacute;rio &eacute; c&ocirc;mico. Eu juro pela minha pr&oacute;xima ficha t&eacute;cnica.)
+    </p>
+  </div>
+</article>
+
+<div class="container"><div class="divider"><span>&middot; &middot; &middot;</span></div></div>
+
+<!-- ============ CAPÍTULO II ============ -->
+<article class="chapter">
+  <div class="container reveal">
+    <div class="chapter-num">Cap&iacute;tulo II</div>
+    <h2 class="chapter-title">Oito Anos de Distra&ccedil;&otilde;es</h2>
+    <div class="chapter-deck">o desejo que dormia debaixo da mesa</div>
+
+    <p class="lead">
+      A gente trabalha junto h&aacute; uns <strong>oito anos</strong>. Oito. &Eacute; quase uma uni&atilde;o est&aacute;vel s&oacute; em prazo de servi&ccedil;o p&uacute;blico. Mas, durante quase todo esse tempo, n&oacute;s n&atilde;o falamos diretamente. Ela existia no meu radar do jeito que coisa bonita existe na vitrine: voc&ecirc; passa, olha, segue.
+    </p>
+
+    <p>
+      Faz uns seis anos, rolou um <em>rol&ecirc;</em> coletivo &mdash; daqueles que viram lend&aacute;rios depois, mas no momento a gente acha que &eacute; s&oacute; uma sa&iacute;da normal. T&iacute;nhamos um grupo de funcion&aacute;rias, eu estava no meio, e ela tamb&eacute;m. Eu queria <em>ela</em>. Queria mesmo. S&oacute; que ela nem sonhava com a minha exist&ecirc;ncia naquela noite &mdash; e olha, sinceramente, acho que nem com a minha exist&ecirc;ncia em <strong>nenhuma noite</strong> at&eacute; esse ano.
+    </p>
+
+    <p>
+      Como o universo tem um senso de humor pessoal contra mim, eu acabei ficando com a <em>amiga dela</em>. A famosa <strong>Funcion&aacute;ria Card&aacute;pio</strong> &mdash; codinome carinhoso para "todo mundo j&aacute; pediu". Mulher generosa, cora&ccedil;&atilde;o aberto, c&oacute;rnea ampla, cl&iacute;nica geral do romance institucional.
+    </p>
+
+    <div class="aside">
+      <span class="aside-label">Desclassifica&ccedil;&atilde;o secreta</span>
+      O problema da Card&aacute;pio n&atilde;o foi ter ficado comigo. O problema foi ela <em>contar pro Brasil inteiro</em>. Acho que at&eacute; o Bolsonaro ficou sabendo. Lula sabe. O porteiro sabe. O cachorro do porteiro sabe. Faltou s&oacute; lan&ccedil;ar uma <em>nota oficial no Di&aacute;rio Oficial da Uni&atilde;o</em>.
+    </div>
+
+    <p>
+      No meio dessa noite memor&aacute;vel, ainda teve a participa&ccedil;&atilde;o especial de outra amiga do grupo, que eu vou chamar carinhosamente de <strong>Funcion&aacute;ria Beata</strong>. A crente. A que cita vers&iacute;culo no grupo do trabalho. A que diz "Deus &eacute; fiel" toda segunda. <em>Essa</em> mesma.
+    </p>
+
+    <p>
+      Pois bem: a Beata, no auge do rol&ecirc;, achou que era hora de testar a f&eacute; do pr&oacute;ximo &mdash; e <strong>enfiou a m&atilde;o dentro da cal&ccedil;a de um cara na frente de todo mundo</strong>. P&uacute;blico. Iluminado. Com testemunhas. Eu juro que se tivesse assessoria de imprensa, ela teria lan&ccedil;ado uma nota desmentindo a pr&oacute;pria m&atilde;o. <em>"Era outra m&atilde;o, irm&atilde;os, era o capeta usando o meu bra&ccedil;o."</em>
+    </p>
+
+    <p>
+      No meio dessa loucura toda, meu contato com a <strong>Funcion&aacute;ria Misteriosa</strong> ficou exatamente no que sempre tinha sido: <em>um desejo escondido</em>. Eu olhei, ela n&atilde;o olhou de volta, e a noite seguiu sua hist&oacute;ria pr&oacute;pria. Seis anos depois, o desejo continuava ali, na mesma gaveta.
+    </p>
+  </div>
+</article>
+
+<div class="container"><div class="divider"><span>&middot; &middot; &middot;</span></div></div>
+
+<!-- ============ CAPÍTULO III ============ -->
+<article class="chapter">
+  <div class="container reveal">
+    <div class="chapter-num">Cap&iacute;tulo III</div>
+    <h2 class="chapter-title">O Melhor Funcion&aacute;rio da Casa</h2>
+    <div class="chapter-deck">esse ano, os boatos voltaram &mdash; e dessa vez sobre n&oacute;s</div>
+
+    <p class="lead">
+      Esse ano, sem mais nem menos, come&ccedil;aram a aparecer boatos de que <em>eu e ela</em> est&aacute;vamos nos pegando. Coisa nova, fofoca recente, ainda quentinha. Eu li, ouvi, ri. Porque, tecnicamente, eu mal conversava com ela &mdash; e o pouco que conversava era estritamente <strong>profissional</strong>.
+    </p>
+
+    <p>
+      Mas tem um detalhe importante aqui que precisa ser registrado em letras grandes: <em>eu sou o melhor funcion&aacute;rio da institui&ccedil;&atilde;o</em>. N&atilde;o me autodenominei. &Eacute; fato consumado. Quando algu&eacute;m tem d&uacute;vida t&eacute;cnica, vem em mim. Quando algu&eacute;m tem problema imposs&iacute;vel, vem em mim. Quando o sistema cai, o telefone toca aqui. &Eacute; uma vida dura, mas algu&eacute;m precisa fazer.
+    </p>
+
+    <div class="aside">
+      <span class="aside-label">Reclama&ccedil;&atilde;o trabalhista</span>
+      Apesar do reconhecimento universal da minha excel&ecirc;ncia, <strong>at&eacute; hoje n&atilde;o ganhei uma placa</strong>. Nem um certificado. Nem um caf&eacute; gr&aacute;tis. Nada. Os eg&iacute;pcios faziam pir&acirc;mide pros fara&oacute;s; aqui n&atilde;o fazem nem um copo descart&aacute;vel pro melhor de todos. Enfim, sigo.
+    </div>
+
+    <p>
+      Ent&atilde;o, naturalmente, ela tinha que vir em mim para tirar d&uacute;vidas. N&atilde;o tinha alternativa. <em>Eu sou a alternativa.</em> E foi a&iacute; que a coisa esquentou: contato di&aacute;rio, profissional na superf&iacute;cie, mas com aquela voltagem por baixo que s&oacute; quem sente, sente.
+    </p>
+
+    <p>
+      Em algum momento eu comentei com ela sobre os boatos. Sobre o que andavam falando da gente. E ela &mdash; presta aten&ccedil;&atilde;o, porque isso &eacute; um momento hist&oacute;rico &mdash; insinuou que, <em>talvez</em>, num cen&aacute;rio bem distante, num acaso muito espec&iacute;fico, num alinhamento c&oacute;smico raro&hellip; <strong>ela ficaria comigo</strong>.
+    </p>
+
+    <p>
+      Pra qualquer outra pessoa, isso seria um "talvez". Pra mim, na minha tradu&ccedil;&atilde;o particular, foi praticamente um <em>contrato assinado em cart&oacute;rio</em>.
+    </p>
+  </div>
+</article>
+
+<div class="container"><div class="divider"><span>&middot; &middot; &middot;</span></div></div>
+
+<!-- ============ CAPÍTULO IV ============ -->
+<article class="chapter">
+  <div class="container reveal">
+    <div class="chapter-num">Cap&iacute;tulo IV</div>
+    <h2 class="chapter-title">A Coroa de 39</h2>
+    <div class="chapter-deck">sobre dez anos e zero arrependimentos</div>
+
+    <p class="lead">
+      Ela tem trinta e nove. Eu tenho vinte e nove. Existe entre n&oacute;s uma <em>d&eacute;cada inteira</em> &mdash; e, sinceramente, &eacute; a coisa menos relevante dessa hist&oacute;ria. Diferen&ccedil;a de idade, pra mim, &eacute; s&oacute; um n&uacute;mero que serve pra preencher cadastro de farm&aacute;cia.
+    </p>
+
+    <p>
+      Ela &eacute; <strong>inteirona</strong>, arrumada de um jeito que n&atilde;o parece esfor&ccedil;o, parece <em>natureza</em>. Daquelas mulheres que entram numa sala e o ar muda de temperatura. N&atilde;o &eacute; vaidade &mdash; &eacute; postura. E postura, em coroa bonita, &eacute; arma branca afiada.
+    </p>
+
+    <p>
+      Christian Grey teria proposto um contrato. Eu, mais brasileiro, queria s&oacute; entrar na sala dela sem ficar pensando o tempo todo no que eu queria fazer ali dentro &mdash; e olha, <strong>n&atilde;o consigo</strong>. A culpa, em parte, &eacute; do meu nariz. Mas isso fica pro pr&oacute;ximo cap&iacute;tulo.
+    </p>
+
+    <div class="aside">
+      <span class="aside-label">Observa&ccedil;&atilde;o t&eacute;cnica</span>
+      Dizer que ela &eacute; "bem cuidada" &eacute; como dizer que um rel&oacute;gio su&iacute;&ccedil;o "d&aacute; certo a hora". Funciona, mas falta poesia.
+    </div>
+  </div>
+</article>
+
+<div class="container"><div class="divider"><span>&middot; &middot; &middot;</span></div></div>
+
+<!-- ============ CAPÍTULO V ============ -->
+<article class="chapter">
+  <div class="container reveal">
+    <div class="chapter-num">Cap&iacute;tulo V</div>
+    <h2 class="chapter-title">A Hiperosmia</h2>
+    <div class="chapter-deck">o nariz que sabe antes da cabe&ccedil;a</div>
+
+    <p class="lead">
+      Eu descobri h&aacute; um tempo que tenho <em>hiperosmia</em>. Em bom portugu&ecirc;s: olfato muito al&eacute;m da m&eacute;dia. N&atilde;o &eacute; superpoder de filme; &eacute; mais um inc&ocirc;modo cl&iacute;nico travestido de curiosidade. Sinto cheiro de comida queimando duas salas adiante, sei quando algu&eacute;m trocou de sab&atilde;o em p&oacute;, e &mdash; isso &eacute; o esquisito de verdade &mdash; <strong>sinto cheiro de gente doente</strong>.
+    </p>
+
+    <p>
+      Sei dizer quando algu&eacute;m est&aacute; pra adoecer antes da pr&oacute;pria pessoa saber. Tem um cheiro diferente, sutil, met&aacute;lico, que o corpo libera quando o sistema imune est&aacute; trabalhando pesado. Eu identifico. Errei pouca vez. &Eacute; estranho demais, e meio que arruina festas: a pessoa chega, abra&ccedil;a, e eu j&aacute; sei que ela vai cair de cama em tr&ecirc;s dias.
+    </p>
+
+    <p>
+      Tamb&eacute;m <strong>sinto cheiro de mulher menstruada</strong>. N&atilde;o &eacute; nojo, nem fixa&ccedil;&atilde;o, &eacute; informa&ccedil;&atilde;o. O corpo da mulher libera compostos diferentes nessa fase, e o meu olfato l&ecirc; isso como quem l&ecirc; um e-mail. Eu n&atilde;o pe&ccedil;o, n&atilde;o procuro, n&atilde;o quero saber &mdash; mas <em>sei</em>. &Eacute; ru&iacute;do que entra sem permiss&atilde;o.
+    </p>
+
+    <div class="aside">
+      <span class="aside-label">Diagn&oacute;stico &iacute;ntimo</span>
+      Christian Grey tinha o controle. Eu tenho o olfato. Convenhamos: <em>ele se deu melhor</em>.
+    </div>
+
+    <p>
+      Agora, sobre <strong>ela</strong>: ela exala um cheiro absurdo. N&atilde;o &eacute; o perfume. O perfume &eacute; bom, mas &eacute; s&oacute; a camada de cima. Por baixo, tem outra coisa &mdash; o cheiro que o corpo libera quando est&aacute; vivo, atento, interessado. <em>Fer&ocirc;monio</em> &eacute; a palavra t&eacute;cnica. Eu prefiro chamar de <em>senten&ccedil;a</em>.
+    </p>
+
+    <p>
+      Eu entro na sala dela pra resolver alguma coisa de trabalho, e meu c&eacute;rebro j&aacute; viaja pro andar de baixo antes da gente conseguir abrir a planilha. N&atilde;o &eacute; minha culpa. &Eacute; <em>qu&iacute;mica</em>. E qu&iacute;mica n&atilde;o se discute &mdash; se mede.
+    </p>
+  </div>
+</article>
+
+<div class="container"><div class="divider"><span>&middot; &middot; &middot;</span></div></div>
+
+<!-- ============ CAPÍTULO VI ============ -->
+<article class="chapter">
+  <div class="container reveal">
+    <div class="chapter-num">Cap&iacute;tulo VI</div>
+    <h2 class="chapter-title">A Confiss&atilde;o &amp; o Apple Watch</h2>
+    <div class="chapter-deck">quando o rel&oacute;gio achou que eu ia infartar</div>
+
+    <p class="lead">
+      Eu n&atilde;o aguentava mais. Entrar naquela sala todo dia, sentir aquele cheiro, conversar de coisa profissional fingindo que o resto n&atilde;o existia &mdash; era um <strong>exerc&iacute;cio di&aacute;rio de autocontrole digno de monge tibetano</strong>. E eu n&atilde;o sou monge. Tibet est&aacute; muito longe.
+    </p>
+
+    <p>
+      Em algum momento, eu desabei. Pessoalmente. Sem rodeio, sem met&aacute;fora liter&aacute;ria, sem "tons de cinza". <em>Preto no branco</em>. Falei que gostava dela. Que queria beij&aacute;-la. Que queria <strong>chup&aacute;-la</strong> &mdash; e eu disse com a palavra de verdade, porque met&aacute;fora a essa altura era covardia.
+    </p>
+
+    <p>
+      Falei do tes&atilde;o. Falei do cheiro. Falei do quanto a sala dela tinha virado uma sala-armadilha pra mim. Falei de coisas que adulto fala com adulto quando os dois j&aacute; sabem que est&atilde;o falando da mesma coisa h&aacute; semanas.
+    </p>
+
+    <p>
+      E foi a&iacute; que a coisa ficou cl&iacute;nica. No meio da conversa, meu Apple Watch come&ccedil;ou a vibrar no pulso. Olhei. <strong>Alerta de frequ&ecirc;ncia card&iacute;aca elevada.</strong> Meus batimentos tinham subido a um n&iacute;vel que o pr&oacute;prio rel&oacute;gio achou prudente avisar que eu, possivelmente, estava prestes a <em>infartar ali mesmo</em>.
+    </p>
+
+    <div class="aside">
+      <span class="aside-label">Boletim m&eacute;dico</span>
+      A Apple, que investe bilh&otilde;es em pesquisa de sa&uacute;de, nunca imaginou um cen&aacute;rio em que o usu&aacute;rio estivesse declarando tes&atilde;o pra uma coroa de 39 anos no meio do expediente. O algoritmo entrou em p&acirc;nico. <em>"Procure aten&ccedil;&atilde;o m&eacute;dica imediatamente"</em>, sugeriu. A &uacute;nica aten&ccedil;&atilde;o que eu queria, naquele momento, n&atilde;o vinha de m&eacute;dico nenhum.
+    </div>
+
+    <p>
+      Ela me ouviu. N&atilde;o saiu correndo, n&atilde;o chamou o RH, n&atilde;o me bloqueou. Considero isso, em padr&otilde;es modernos, praticamente um <em>"sim"</em> &mdash; ou pelo menos um <em>"continue falando, mas controla a&iacute; esse cora&ccedil;&atilde;o, rapaz"</em>.
+    </p>
+
+    <p class="joke">
+      Pra ficar registrado em ata: eu nunca quis casar nem fazer plano de vida.<br>
+      Quis t&ecirc;-la <em>por inteiro</em>, uma vez, e guardar isso como mem&oacute;ria.<br>
+      Coisa simples. Coisa adulta. Coisa quase honesta.
+    </p>
+  </div>
+</article>
+
+<div class="container"><div class="divider"><span>&middot; &middot; &middot;</span></div></div>
+
+<!-- ============ CAPÍTULO VII ============ -->
+<article class="chapter">
+  <div class="container reveal">
+    <div class="chapter-num">Cap&iacute;tulo VII</div>
+    <h2 class="chapter-title">O Primeiro Encontro</h2>
+    <div class="chapter-deck">duas horas de conversa, e a primeira fuga</div>
+
+    <p class="lead">
+      Sa&iacute;mos uma vez. Conversa boa, das que a gente n&atilde;o v&ecirc; o tempo passar. Ela &eacute; <em>inteligente, ir&ocirc;nica, observadora</em> &mdash; daquelas pessoas que fariam qualquer terapeuta perder o emprego. Eu ficaria horas ali, ouvindo, respondendo, rindo.
+    </p>
+
+    <p>
+      A&iacute; ela olha pro rel&oacute;gio. <strong>"Preciso ir pra casa."</strong>
+    </p>
+
+    <p>
+      Eu, que sou observador (e otimista profissional), li o seguinte: ela estava com a qu&iacute;mica subindo, sentindo o que fer&ocirc;monio costuma fazer, e decidiu sair de cena <em>antes</em> que algo acontecesse. Respeito. N&atilde;o tem nada de errado em recuar quando o pr&oacute;prio corpo come&ccedil;a a virar contra o pr&oacute;prio plano.
+    </p>
+
+    <div class="aside">
+      <span class="aside-label">Tradu&ccedil;&atilde;o do flerte</span>
+      "Tenho que ir" pode significar:<br>
+      <em>(a)</em> tenho mesmo que ir; <em>(b)</em> n&atilde;o confio em mim aqui; <em>(c)</em> n&atilde;o confio em <strong>voc&ecirc;</strong> aqui; ou <em>(d)</em> todas as anteriores.<br>
+      No meu caso, prefiro acreditar no (b). &Eacute; mais bonito pro di&aacute;rio.
+    </div>
+
+    <p>
+      Beijo no rosto, tchau elegante, e eu fui pra casa com a sensa&ccedil;&atilde;o de que aquela hist&oacute;ria, finalmente, tinha sa&iacute;do do plano puramente imagin&aacute;rio. <em>Spoiler:</em> ela ia sair muito mais. Inclusive do plano horizontal pro vertical, em formato de escadaria. Mas isso fica para o pr&oacute;ximo cap&iacute;tulo.
+    </p>
+  </div>
+</article>
+
+<div class="container"><div class="divider"><span>&middot; &middot; &middot;</span></div></div>
+
+<!-- ============ CAPÍTULO VIII ============ -->
+<article class="chapter">
+  <div class="container reveal">
+    <div class="chapter-num">Cap&iacute;tulo VIII</div>
+    <h2 class="chapter-title">O Primeiro Beijo (no Quinto Andar)</h2>
+    <div class="chapter-deck">escadaria, parede, fofoca falsa e um beijo curativo</div>
+
+    <p class="lead">
+      No dia seguinte ao primeiro encontro, antes da gente se despedir de vez, eu tive uma ideia. Daquelas ideias de homem com tes&atilde;o e plano de fundo &mdash; perigosas, mas eficientes. Convidei ela pra subir at&eacute; a minha academia, que ficava no <strong>segundo andar</strong>.
+    </p>
+
+    <p>
+      Aqui aconteceu a primeira esquisitice da expedi&ccedil;&atilde;o: ela, lerdona profissional, em vez de pegar o elevador como qualquer ser humano economicamente racional, <em>subiu de escada</em>. Os dois lances inteiros, a p&eacute;. Eu, observando de cima, j&aacute; sabia que aquela mulher operava em uma f&iacute;sica pr&oacute;pria.
+    </p>
+
+    <p>
+      Mas eu n&atilde;o queria parar no segundo andar. Eu tinha um plano. Sa&iacute; da academia com o cora&ccedil;&atilde;o ainda acelerado da malha&ccedil;&atilde;o, e o resto acelerado pelo que viria. Falei pra ela: <em>"Vem c&aacute;, tenho uma fofoca quente pra te contar."</em>
+    </p>
+
+    <div class="aside">
+      <span class="aside-label">Diagn&oacute;stico social</span>
+      Ela &eacute; uma <strong>fofoqueira de primeira</strong>. Categoria ouro. Se voc&ecirc; oferece fofoca quente pra ela, ela atravessa f&aacute;bricas, sobe pr&eacute;dios, ignora amigos. &Eacute; um instinto, n&atilde;o uma escolha. Eu sabia disso, e usei sem o menor pudor.
+    </div>
+
+    <p>
+      Subimos mais tr&ecirc;s andares. Do segundo at&eacute; o <strong>quinto</strong>. Tr&ecirc;s lances de escada s&oacute; pra ela ouvir a tal fofoca. Mas tinha um motivo cl&iacute;nico por tr&aacute;s do plano: meus batimentos j&aacute; estavam altos da academia e do momento, e eu queria que <em>os dela</em> tamb&eacute;m subissem. N&atilde;o ia rolar o que eu queria com ela em modo de repouso. <strong>Se &eacute; pra acelerar o cora&ccedil;&atilde;o, que acelere por dois motivos.</strong>
+    </p>
+
+    <p>
+      Quinto andar. Corredor vazio. Eu olhei pra ela e n&atilde;o tinha fofoca nenhuma &mdash; tinha s&oacute; um beijo planejado. Encostei ela na parede. Ela recuou. Disse <em>"n&atilde;o"</em>. Eu juro que naquele segundo a minha alma saiu do corpo, deu uma volta no pr&eacute;dio e voltou meio constrangida. Achei que tinha lido tudo errado.
+    </p>
+
+    <p>
+      Mas eu tinha que ter certeza. Perguntei: <em>"Tem certeza?"</em>. Ela disse que n&atilde;o. <strong>Que n&atilde;o tinha certeza.</strong> Cheguei perto de novo, devagar, e ela <em>deixou</em>.
+    </p>
+
+    <p class="joke">
+      Puta merda que beijo bom do caralho.<br>
+      Desculpa o vocabul&aacute;rio, di&aacute;rio &mdash; mas n&atilde;o tem outro jeito de descrever.<br>
+      <em>Era o beijo certo, na pessoa certa, na escadaria errada.</em>
+    </p>
+
+    <p>
+      Detalhe que torna tudo mais &eacute;pico: ela estava <strong>doente</strong>. Catarro em pessoa. Gripada at&eacute; a alma. Mas minha sa&uacute;de &eacute; de uma rocha, e meu sistema imunol&oacute;gico, modesto, tem curr&iacute;culo de comando militar. <em>Tirei a gripe dela na boca.</em> Meu beijo curou. N&atilde;o existe explica&ccedil;&atilde;o cient&iacute;fica, mas existe o fato: ela melhorou depois.
+    </p>
+
+    <div class="aside">
+      <span class="aside-label">Briga p&oacute;s-beijo</span>
+      Ela gostou. Falou que gostou. Mas <em>n&atilde;o gostou</em> da localiza&ccedil;&atilde;o. Perto do trabalho, com risco de algu&eacute;m ver, no corredor do quinto andar &mdash; sa&iacute;da pra cima fora do plano de carreira dela. Brigou comigo, em tom baixo de coroa madura, e decretou: <strong>"nunca mais aqui"</strong>. Mensagem recebida. Falei pra sairmos &agrave; noite.
+    </div>
+  </div>
+</article>
+
+<div class="container"><div class="divider"><span>&middot; &middot; &middot;</span></div></div>
+
+<!-- ============ CAPÍTULO IX ============ -->
+<article class="chapter">
+  <div class="container reveal">
+    <div class="chapter-num">Cap&iacute;tulo IX</div>
+    <h2 class="chapter-title">A Despedida da Funcion&aacute;ria Cabe&ccedil;uda</h2>
+    <div class="chapter-deck">carona, restri&ccedil;&otilde;es, e o segundo beijo no carro</div>
+
+    <p class="lead">
+      Aconteceu de uma colega da institui&ccedil;&atilde;o se despedir do cargo &mdash; a famosa <strong>Funcion&aacute;ria Cabe&ccedil;uda</strong>. Codinome carinhoso, refer&ecirc;ncia direta &agrave; teimosia not&oacute;ria dela em qualquer reuni&atilde;o. Marcaram uma despedida noturna. Eu nem estava muito a fim, mas o universo me ofereceu uma oportunidade de planejamento estrat&eacute;gico, e eu n&atilde;o podia recusar.
+    </p>
+
+    <p>
+      Combinei com a Misteriosa: em vez de ela chamar Uber pra voltar pra casa, eu daria a carona. <em>Servi&ccedil;o de transporte personalizado, motorista particular, com brinde de aten&ccedil;&atilde;o.</em> Ela topou. Eu fui &agrave; despedida com a tranquilidade de quem j&aacute; tinha o ato dois roteirizado.
+    </p>
+
+    <div class="aside">
+      <span class="aside-label">Engenharia de oportunidade</span>
+      Existem dois tipos de homem: o que vai a uma despedida pra se despedir, e o que vai a uma despedida com <em>um plano de carona pr&eacute;-aprovado</em>. Eu pertencia &agrave; segunda categoria. A Cabe&ccedil;uda nunca soube que sua festa de sa&iacute;da serviu, na verdade, de log&iacute;stica afetiva pra outra pessoa. <em>Sorry not sorry.</em>
+    </div>
+
+    <p>
+      No fim da noite, despedida cumprida, eu e a Misteriosa entramos no carro. Estacionei num lugar discreto. E ali, naquele micro-espa&ccedil;o de quatro rodas, eu pude finalmente fazer o que tinha planejado: <strong>beij&aacute;-la com todas as restri&ccedil;&otilde;es do mundo</strong>.
+    </p>
+
+    <p>
+      E aqui &eacute; importante registrar com honestidade: as restri&ccedil;&otilde;es <em>existiam</em>. O hor&aacute;rio era apertado. Ela me apressava o tempo todo, falando que precisava ir embora. O carro &eacute; um quarto port&aacute;til, mas com vidros &mdash; e ela, sempre observadora, n&atilde;o esquecia disso. Os limites do que poderia rolar foram dela, foram firmes, e foram respeitados.
+    </p>
+
+    <p>
+      Ainda assim, beijar ela com calma, mesmo dentro da janela apertada que ela me deu, valeu cada segundo. Beijo de quem j&aacute; queria fazer aquilo h&aacute; <em>oito anos</em>. Beijo com peso de hist&oacute;ria. Beijo que, mesmo dentro de uma cabine apertada e com cron&ocirc;metro correndo, conseguiu existir inteiro.
+    </p>
+
+    <p class="joke">
+      Christian Grey teria um carro com motorista, divis&oacute;ria fum&ecirc; e champanhe.<br>
+      Eu tinha um carro com tapete sujo, ar-condicionado funcionando e pressa.<br>
+      <em>Mesmo assim, foi melhor.</em>
+    </p>
+  </div>
+</article>
+
+<div class="container"><div class="divider"><span>&middot; &middot; &middot;</span></div></div>
+
+<!-- ============ CAPÍTULO X ============ -->
+<article class="chapter">
+  <div class="container reveal">
+    <div class="chapter-num">Cap&iacute;tulo X</div>
+    <h2 class="chapter-title">Almo&ccedil;o de Motel &amp; o Bolo no Sol</h2>
+    <div class="chapter-deck">a manh&atilde; em que eu planejei demais, e o sol castigou tudo</div>
+
+    <p class="lead">
+      A ideia veio cedo. Cedo de verdade. Marquei com ela por WhatsApp logo de manh&atilde; (sim, ela respondeu &mdash; milagre raro, registre-se no di&aacute;rio) que buscaria ela <strong>11:50</strong> em ponto. Dez minutos antes do hor&aacute;rio de todo mundo sair pro almo&ccedil;o. O plano tinha rel&oacute;gio, log&iacute;stica e ousadia &mdash; trindade perigosa.
+    </p>
+
+    <p>
+      Decidi ir de moto. Mais &aacute;gil, mais discreto, e &mdash; principalmente &mdash; mais &uacute;til pra <em>almo&ccedil;ar com ela em outro lugar que n&atilde;o um restaurante</em>. O destino era motel. O card&aacute;pio era ela. E pra n&atilde;o chegar de m&atilde;os vazias no encontro, encarei a parada com bagagem t&eacute;cnica.
+    </p>
+
+    <div class="aside">
+      <span class="aside-label">Invent&aacute;rio do mochileiro</span>
+      Levei <strong>chicote, algema e corda de alpinista</strong>. A Deize Tigrona ficaria orgulhosa &mdash; em sua imensa sabedoria popular, ela j&aacute; havia decretado: <em>"da&iacute; que eu percebi que o cara &eacute; sadomasoquista"</em>. Funk de 2008 servindo de manual de instru&ccedil;&otilde;es pra encontro de 2026. <strong>Ciclo completo.</strong>
+    </div>
+
+    <p>
+      O plano era simples e cir&uacute;rgico: <strong>bagun&ccedil;ar ela em uma hora</strong>, devolver ela ao trabalho como se nada tivesse acontecido. Mulher arrumada de volta &agrave; mesa, ningu&eacute;m suspeitando, e eu voltando pro mundo com a alma em paz e o tes&atilde;o resolvido. Engenharia de hor&aacute;rio. Cron&ocirc;metro su&iacute;&ccedil;o. <em>Beleza prussiana.</em>
+    </p>
+
+    <p>
+      Cheguei 11:45. Sol a pino, asfalto fervendo, capacete suando, eu de moto esperando ela com a cara de quem tem um plano. <strong>11:50</strong> passou. <strong>12:00</strong> passou. <strong>12:15</strong>. <strong>12:30</strong>. Eu ali, derretendo, com o chicote no compartimento da moto e a esperan&ccedil;a evaporando junto com o suor.
+    </p>
+
+    <p>
+      Ela desistiu. Mandou avisar. Eu fiquei mal &mdash; n&atilde;o de raiva, de <em>peso</em>. Aquela sensa&ccedil;&atilde;o ruim de que eu estava for&ccedil;ando ela pra algo que ela n&atilde;o queria de verdade. Pedi desculpas. Falei serio. E ela me devolveu uma frase que me derrubou de outro jeito: <strong>"queria, s&oacute; n&atilde;o tive coragem"</strong>.
+    </p>
+
+    <p class="joke">
+      Coragem, ela disse.<br>
+      <em>A coroa de 39 anos tem medo da pr&oacute;pria vontade.</em><br>
+      E eu, com chicote na mochila, fui pra casa decifrar isso.
+    </p>
+
+    <p>
+      Marcamos pra noite. Reorganiza&ccedil;&atilde;o de planejamento. Encerrei a opera&ccedil;&atilde;o-almo&ccedil;o, guardei os equipamentos esot&eacute;ricos no arm&aacute;rio, e fui me recompor pro segundo turno do mesmo dia.
+    </p>
+  </div>
+</article>
+
+<div class="container"><div class="divider"><span>&middot; &middot; &middot;</span></div></div>
+
+<!-- ============ CAPÍTULO X.5 - A NOITE ============ -->
+<article class="chapter">
+  <div class="container reveal">
+    <div class="chapter-num">Cap&iacute;tulo X &middot; segunda parte</div>
+    <h2 class="chapter-title">Short, Perfume &amp; Posto de Gasolina</h2>
+    <div class="chapter-deck">a noite em que o tes&atilde;o subiu e o cron&ocirc;metro derrubou</div>
+
+    <p class="lead">
+      Fui at&eacute; a casa dela &agrave; noite. Pra contextualizar quem est&aacute; lendo: eu moro a <strong>tr&ecirc;s horas</strong> de viagem da casa dela. Bom, est&aacute; bem &mdash; s&atilde;o trinta e cinco minutos. Mas, pra efeito narrativo deste di&aacute;rio, eu prefiro a vers&atilde;o tr&ecirc;s horas. <em>Aumenta o drama, aumenta o m&eacute;rito, e aumenta a piada quando ela me deixou esperando.</em>
+    </p>
+
+    <p>
+      Cheguei. Estacionei. E esperei. Mais <strong>uma hora inteira</strong>. Estava frio &mdash; daqueles que voc&ecirc; come&ccedil;a a fazer contas mentais s&oacute; pra n&atilde;o pensar no quanto a noite est&aacute; longa. Como sa&iacute;da pro frio e pro tempo curto, troquei o plano do motel por algo mais r&aacute;pido. <em>N&atilde;o ia dar tempo de trazer ela pra minha casa.</em> Adapta-se.
+    </p>
+
+    <p>
+      A&iacute; ela apareceu. <strong>De short.</strong>
+    </p>
+
+    <div class="aside">
+      <span class="aside-label">Constata&ccedil;&atilde;o factual</span>
+      Puta merda que pernas bonitas, mano. Puta que pariu. Aquilo n&atilde;o era roupa, era <em>declara&ccedil;&atilde;o p&uacute;blica</em>. Aquilo era um documento jur&iacute;dico com fotos. Aquilo era a Funcion&aacute;ria Misteriosa entrando em modo "venha me bagun&ccedil;ar" e mostrando o sum&aacute;rio executivo na frente do pr&eacute;dio.
+    </div>
+
+    <p>
+      E veio com aquele cheiro. <em>O cheiro</em>. N&atilde;o era perfume, n&atilde;o era sab&atilde;o, era <strong>a mulher mais sexuda do mundo exalando ferom&ocirc;nio em concentra&ccedil;&atilde;o m&aacute;xima</strong> &mdash; daqueles que um nariz com hiperosmia detecta antes mesmo da pessoa entrar no carro. Era qu&iacute;mica pura. E eu, sinceramente, estava sem defesa nenhuma contra aquela qu&iacute;mica.
+    </p>
+
+    <p>
+      Liguei o carro. E ela soltou a frase do dia: <strong>"S&oacute; tenho trinta minutos. E n&atilde;o posso ir longe."</strong>
+    </p>
+
+    <p class="joke">
+      Banho de &aacute;gua fria n&atilde;o.<br>
+      <em>Inunda&ccedil;&atilde;o de &aacute;gua gelada em pleno deserto.</em><br>
+      Os arquitetos do tes&atilde;o que estavam projetando a noite simplesmente largaram tudo e foram embora.
+    </p>
+
+    <p>
+      Adaptei outra vez. Parei numa esquina pra ela comprar algo de beber, e encostei o carro num <strong>posto de gasolina</strong>, num cantinho mais isolado. Lugar de conversar mesmo. Sem motel, sem privacidade, sem ousadia &mdash; s&oacute; a cabine do carro, ela de short, o cheiro, e a minha boca seca de tes&atilde;o.
+    </p>
+
+    <div class="aside">
+      <span class="aside-label">Estado f&iacute;sico do narrador</span>
+      Eu estava com a boca t&atilde;o seca de vontade que nem tinha &aacute;gua pra beber, a n&atilde;o ser <em>a &aacute;gua da boca dela</em>. E mesmo essa estava racionada, com taxa de importa&ccedil;&atilde;o, alf&acirc;ndega rigorosa e fila de espera.
+    </div>
+
+    <p>
+      Conversamos. E aqui &eacute; importante registrar: papo bom de novo. Eu falei s&oacute; verdades pra ela. Tudo o que eu sentia, tudo o que eu pensava, tudo o que estava em jogo. Se ela fez o mesmo, eu n&atilde;o sei &mdash; mas tenho a impress&atilde;o de que fez. Pelo menos por enquanto, prefiro acreditar nisso.
+    </p>
+
+    <p>
+      Eu estava louco pra encostar nela. <em>Louco mesmo.</em> Mas ela manteve as restri&ccedil;&otilde;es de antes: rosto e cabelo, ponto final. Foi autorit&aacute;ria, foi firme, e foi clara. <strong>Respeitei. N&atilde;o ultrapassei o limite.</strong> Bom motorista, lembra? Olha o painel, respeita a curva.
+    </p>
+  </div>
+</article>
+
+<div class="container"><div class="divider"><span>&middot; &middot; &middot;</span></div></div>
+
+<!-- ============ CAPÍTULO X.6 - O CHEFE SOBRINHO ============ -->
+<article class="chapter">
+  <div class="container reveal">
+    <div class="chapter-num">Cap&iacute;tulo X &middot; terceira parte</div>
+    <h2 class="chapter-title">A Revela&ccedil;&atilde;o do Chefe Sobrinho</h2>
+    <div class="chapter-deck">quando o tes&atilde;o trope&ccedil;a num detalhe institucional</div>
+
+    <p class="lead">
+      No meio da conversa no posto, ela soltou uma informa&ccedil;&atilde;o que eu n&atilde;o pedi, n&atilde;o esperava e definitivamente n&atilde;o queria receber: <em>ela j&aacute; tinha ficado com o meu chefe</em>.
+    </p>
+
+    <p>
+      Para os fins deste di&aacute;rio, vou denomin&aacute;-lo <strong>o Chefe Sobrinho</strong>. Personagem essencial do enredo institucional: o funcion&aacute;rio bombado da TI &mdash; aquele que vive de camisa apertada e que recebe todos os cr&eacute;ditos pelo meu trabalho. Aquele que apresenta projetos meus em reuni&otilde;es como se tivesse pensado neles enquanto malhava. Eu, no fundo, j&aacute; me conformei: <em>profissionalmente</em>, vivo num enredo escrito em letra mi&uacute;da no contrato.
+    </p>
+
+    <div class="aside">
+      <span class="aside-label">Genealogia corporativa</span>
+      O codinome n&atilde;o &eacute; gratuito: ele &eacute;, literalmente, <strong>sobrinho do dono da empresa</strong>. Isso explica muita coisa que o RH n&atilde;o explicaria nem sob tortura. Explica o cargo, explica a paci&ecirc;ncia institucional, explica o motivo pelo qual <em>os meus projetos</em> sempre saem da reuni&atilde;o com a assinatura dele. <em>Sangue n&atilde;o se discute &mdash; se herda.</em>
+    </div>
+
+    <p>
+      E ela beijou ele. <strong>Beijou.</strong> Boca na boca. Por uns segundos meu tes&atilde;o simplesmente <em>sumiu</em> &mdash; como uma vela que algu&eacute;m apagou e ainda esfregou cinza por cima. Confesso o impacto: doeu mais como ego do que como cora&ccedil;&atilde;o.
+    </p>
+
+    <p class="joke">
+      Mas gosto &eacute; que nem cu: cada um tem o seu.<br>
+      <em>Quem sou eu pra discutir as escolhas paralelas de uma mulher livre?</em><br>
+      Engoli, reorganizei o tes&atilde;o, e voltei pro presente &mdash; que era ela, ali, ao meu lado, com aquele short e aquele cheiro.
+    </p>
+
+    <p>
+      Decidi viver o meu momento com ela. O passado dela com o Chefe Sobrinho &eacute; problema dela &mdash; meu problema agora era entender o que <em>eu</em> ia conseguir fazer naquela cabine de carro, com trinta minutos no cron&ocirc;metro e cerca el&eacute;trica em volta do corpo dela.
+    </p>
+  </div>
+</article>
+
+<div class="container"><div class="divider"><span>&middot; &middot; &middot;</span></div></div>
+
+<!-- ============ CAPÍTULO X.7 - JOGUINHOS E NÍVEIS ============ -->
+<article class="chapter">
+  <div class="container reveal">
+    <div class="chapter-num">Cap&iacute;tulo X &middot; quarta parte</div>
+    <h2 class="chapter-title">Os N&iacute;veis e o Hacker Sem Manual</h2>
+    <div class="chapter-deck">o jogo dela, as regras dela, e o cara de TI sem documenta&ccedil;&atilde;o</div>
+
+    <p class="lead">
+      Ela gosta de joguinhos. Gosta de provocar, de impor limites, de dizer "talvez" e deixar a frase pendurada no ar. &Eacute; o esporte preferido dela. E olha, eu at&eacute; respeito o estilo &mdash; mas tem um problema operacional grave que precisa entrar em ata.
+    </p>
+
+    <p>
+      <strong>Eu n&atilde;o consegui deix&aacute;-la excitada de verdade em nenhum momento.</strong> Nem com o beijo na escadaria, nem com o beijo no carro, nem com a conversa de boca seca no posto. Ela fala que eu beijo bem &mdash; mas, sinceramente, eu come&ccedil;o a achar que <em>n&atilde;o estou beijando t&atilde;o bem assim</em>. Porque se beijasse, ela teria reagido. E ela n&atilde;o reagiu, n&atilde;o de verdade.
+    </p>
+
+    <div class="aside">
+      <span class="aside-label">Autocr&iacute;tica t&eacute;cnica</span>
+      Pode ser que eu tenha <em>perdido as manhas</em>. Acontece. Anos de casamento ensinam a economizar energia, n&atilde;o a acender chama. Pode ser tamb&eacute;m que a chama dela esteja em outro circuito que eu ainda n&atilde;o descobri. Pode ser, ainda, que ela simplesmente <strong>n&atilde;o queira acender ali, naquela hora, naquele posto de gasolina</strong> &mdash; o que, francamente, &eacute; o cen&aacute;rio mais prov&aacute;vel.
+    </div>
+
+    <p>
+      E a&iacute; ela soltou uma frase que mereceria figurinha pr&oacute;pria de WhatsApp: cada encontro <em>"desbloqueia um n&iacute;vel"</em>. <strong>N&iacute;vel.</strong> Como videogame. Como Super Mario. Como aquelas fases que voc&ecirc; passa horas tentando, e quando finalmente consegue, descobre que a princesa est&aacute; em outro castelo.
+    </p>
+
+    <p>
+      O detalhe cruel &eacute; que ela n&atilde;o me deu nenhuma dica de como desbloquear o pr&oacute;ximo n&iacute;vel. Nada. Nem um cheat code, nem um walkthrough, nem um YouTuber gritando em portugu&ecirc;s. <em>S&oacute; o "talvez"</em>, sempre o "talvez", e a porta fechando suavemente na minha cara at&eacute; o pr&oacute;ximo save point.
+    </p>
+
+    <p class="joke">
+      Eu sou de TI.<br>
+      Eu deveria saber <em>hackear</em> isso.<br>
+      Mas o sistema dela est&aacute; fora do meu conhecimento &mdash; protocolo desconhecido, criptografia personalizada, firewall feminino de &uacute;ltima gera&ccedil;&atilde;o.
+    </p>
+
+    <p>
+      Vou ter que <strong>estudar</strong>. Reler manuais, observar padr&otilde;es, ouvir o que ela diz nas entrelinhas, anotar o que ela faz quando acha que eu n&atilde;o estou prestando aten&ccedil;&atilde;o. &Eacute; trabalho de campo, &eacute; engenharia reversa, &eacute; documenta&ccedil;&atilde;o de software fechado. Mas se eu sou o melhor funcion&aacute;rio da institui&ccedil;&atilde;o, <em>algum lugar dentro dessa cabe&ccedil;a aqui</em> tem que conseguir achar a senha.
+    </p>
+
+    <p>
+      &Eacute; isso, Funcion&aacute;ria estranha e misteriosa. <strong>Continua nos pr&oacute;ximos cap&iacute;tulos.</strong>
+    </p>
+  </div>
+</article>
+
+<div class="container"><div class="divider"><span>&middot; &middot; &middot;</span></div></div>
+
+<!-- ============ CAPÍTULO XI ============ -->
+<article class="chapter">
+  <div class="container reveal">
+    <div class="chapter-num">Cap&iacute;tulo XI</div>
+    <h2 class="chapter-title">A Mulher que Odeia Conversar Online</h2>
+    <div class="chapter-deck">presencialmente: orador grego &middot; digitalmente: pedra</div>
+
+    <p class="lead">
+      Ela <em>ama</em> conversar pessoalmente. Por mensagem? N&atilde;o. N&atilde;o responde, n&atilde;o puxa assunto, n&atilde;o manda &aacute;udio. Praticamente um <strong>modo avi&atilde;o emocional</strong> permanente.
+    </p>
+
+    <p>
+      Eu, que sou de TI, j&aacute; cheguei a desconfiar do WhatsApp. Testei. Reiniciei o roteador. Conferi se ela n&atilde;o tinha sido sequestrada por uma operadora. Nada disso. <em>O bug &eacute; proposital.</em>
+    </p>
+
+    <div class="aside">
+      <span class="aside-label">Diagn&oacute;stico t&eacute;cnico</span>
+      <strong>Erro 404:</strong> assunto n&atilde;o encontrado.<br>
+      <strong>Erro 408:</strong> tempo de resposta esgotado.<br>
+      <strong>Erro 451:</strong> indispon&iacute;vel por motivos legais (dela).
+    </div>
+
+    <p>
+      Pode ser, como ela diz, que ela <em>realmente n&atilde;o goste</em> de teclar. Pode ser tamb&eacute;m que seja uma desculpa elegante pra eu n&atilde;o ench&ecirc;-la o dia inteiro. Eu prefiro a primeira vers&atilde;o &mdash; porque a segunda mexe com o ego, e o meu &eacute; fr&aacute;gil que nem cristal Baccarat.
+    </p>
+  </div>
+</article>
+
+<div class="container"><div class="divider"><span>&middot; &middot; &middot;</span></div></div>
+
+<!-- ============ CAPÍTULO XII ============ -->
+<article class="chapter">
+  <div class="container reveal">
+    <div class="chapter-num">Cap&iacute;tulo XII</div>
+    <h2 class="chapter-title">Onde Eu Perdi a Linha</h2>
+    <div class="chapter-deck">uma autocr&iacute;tica em tr&ecirc;s tempos</div>
+
+    <p class="lead">
+      Honestidade obriga: <strong>eu for&ccedil;ei demais em alguns momentos</strong>. No encontro mais recente, em alguns pontos, perdi a linha. Empurrei a conversa pra lugares que ela n&atilde;o tinha pedido pra ir, insisti onde devia ter recuado, e provavelmente fiz cara de cachorro pedindo bife.
+    </p>
+
+    <p>
+      Ela ficou <em>receosa</em>. Receio n&atilde;o &eacute; "n&atilde;o", mas tamb&eacute;m n&atilde;o &eacute; "sim". &Eacute; aquele meio-termo onde a gente devia recolher o cavalo, tomar um copo d'&aacute;gua e lembrar que adulto bom &eacute; adulto que <strong>respeita o ritmo do outro</strong>.
+    </p>
+
+    <p class="joke">
+      Christian Grey teria assinado um contrato.<br>
+      Eu, no m&aacute;ximo, devia uma desculpa.<br>
+      (Aqui est&aacute; ela, oficialmente registrada em HTML.)
+    </p>
+
+    <div class="aside">
+      <span class="aside-label">Li&ccedil;&atilde;o aprendida</span>
+      Tes&atilde;o &eacute; gasolina. Bom motorista olha o painel, respeita a curva e <em>nunca</em> dirige pelo retrovisor.
+    </div>
+  </div>
+</article>
+
+<div class="container"><div class="divider"><span>&middot; &middot; &middot;</span></div></div>
+
+<!-- ============ CAPÍTULO XIII ============ -->
+<article class="chapter">
+  <div class="container reveal">
+    <div class="chapter-num">Cap&iacute;tulo XIII</div>
+    <h2 class="chapter-title">A Apego-Holic</h2>
+    <div class="chapter-deck">"eu me apego f&aacute;cil", disse ela, sumindo em seguida</div>
+
+    <p class="lead">
+      Uma das frases favoritas dela: <em>"eu me apego f&aacute;cil"</em>. Dito com olhar de mulher fr&aacute;gil, daquelas que precisam ser protegidas do pr&oacute;prio cora&ccedil;&atilde;o. Bonito. Comovente. <strong>Falso.</strong>
+    </p>
+
+    <p>
+      Porque, observando o comportamento, o que ela faz &eacute; o <em>oposto</em>: ela faz os outros se apegarem a ela. Conversa boa, presen&ccedil;a marcante, charme calibrado em laborat&oacute;rio &mdash; e quando o sujeito est&aacute; fisgado, <strong>desliga o sinal</strong>. Tipo Wi-Fi de caf&eacute;: parece bom, mas n&atilde;o d&aacute; pra fazer download de nada s&eacute;rio.
+    </p>
+
+    <div class="aside">
+      <span class="aside-label">Manual de identifica&ccedil;&atilde;o</span>
+      <em>Sintomas em campo:</em> sorriso que promete, mensagens que somem, encontros que escapam, abra&ccedil;os que medem o tempo no rel&oacute;gio dela. Conhecida na literatura popular como <strong>"a que provoca por esporte"</strong>.
+    </div>
+
+    <p>
+      N&atilde;o &eacute; golpe da mulher inocente. &Eacute; o <em>esporte preferido</em> dela. E olha, eu at&eacute; admiro &mdash; quem domina o jogo merece o respeito do advers&aacute;rio. Eu s&oacute; queria, sinceramente, que ela jogasse <strong>menos campeonato</strong> e <strong>mais amistoso</strong>.
+    </p>
+  </div>
+</article>
+
+<div class="container"><div class="divider"><span>&middot; &middot; &middot;</span></div></div>
+
+<!-- ============ OS 50 TONS ============ -->
+<article class="chapter">
+  <div class="container reveal">
+    <div class="chapter-num">Ap&ecirc;ndice</div>
+    <h2 class="chapter-title">Os 50 Tons (resumidos em 12)</h2>
+    <div class="chapter-deck">um invent&aacute;rio po&eacute;tico da Funcion&aacute;ria Misteriosa</div>
+
+    <ol class="tons-list">
+      <li><strong>Cinza fofoca:</strong> a cor com que pintam ela nos corredores. Inflado, exagerado, narrador parcial.</li>
+      <li><strong>Cinza verdade:</strong> a cor real. Mais clara, mais leve, mais ela.</li>
+      <li><strong>Cinza coroa:</strong> 39 anos vestidos com eleg&acirc;ncia de quem j&aacute; decidiu o que n&atilde;o tolera mais.</li>
+      <li><strong>Cinza perfume:</strong> o que ela escolheu. Caro, sutil, premeditado.</li>
+      <li><strong>Cinza fer&ocirc;monio:</strong> o que ela <em>n&atilde;o</em> escolheu, e me derruba mesmo assim.</li>
+      <li><strong>Cinza escadaria:</strong> cinco andares, parede do corredor, primeiro beijo &mdash; cor de adrenalina.</li>
+      <li><strong>Cinza carro:</strong> noite, p&oacute;s-despedida, restri&ccedil;&otilde;es e cron&ocirc;metro. Beijo com peso de oito anos.</li>
+      <li><strong>Cinza WhatsApp:</strong> ausente. Sil&ecirc;ncio digital de catedral.</li>
+      <li><strong>Cinza atraso:</strong> tr&ecirc;s horas. Sem aviso. Com sorriso depois.</li>
+      <li><strong>Cinza "safada":</strong> dito pela boca dela. Demonstrado em parte.</li>
+      <li><strong>Cinza zona militar:</strong> grande parte do corpo. Acesso restrito por decreto pessoal.</li>
+      <li><strong>Cinza provoca&ccedil;&atilde;o:</strong> a cor predominante. O tom mestre de toda a paleta.</li>
+    </ol>
+  </div>
+</article>
+
+<div class="container"><div class="divider"><span>&middot; &middot; &middot;</span></div></div>
+
+<!-- ============ EPÍLOGO ============ -->
+<article class="chapter">
+  <div class="container reveal">
+    <div class="chapter-num">Ep&iacute;logo</div>
+    <h2 class="chapter-title">Registro de um Desejo</h2>
+    <div class="chapter-deck">isso aqui n&atilde;o &eacute; cantada &mdash; &eacute; arquivo</div>
+
+    <p class="lead">
+      Antes de qualquer coisa, um esclarecimento que precisa caber aqui no meio de toda essa zoeira: eu sou um homem <strong>comprometido</strong>. Casado, com responsabilidade, com hist&oacute;ria. Hoje, por motivos que s&oacute; cabem ao nosso casamento, eu e minha mulher <em>estamos sem nos falar</em> &mdash; uma pausa, um sil&ecirc;ncio, uma fase. Ela sabe. <em>A Funcion&aacute;ria Misteriosa tamb&eacute;m sabe.</em> N&atilde;o &eacute; segredo, n&atilde;o &eacute; tr&aacute;gico, n&atilde;o &eacute; desculpa.
+    </p>
+
+    <p>
+      Esse di&aacute;rio, ent&atilde;o, n&atilde;o &eacute; uma cantada. N&atilde;o &eacute; um pedido. N&atilde;o &eacute; uma proposta de relacionamento, de namoro, de futuro &mdash; nada disso est&aacute; em jogo aqui, e nem deveria estar. &Eacute; outra coisa.
+    </p>
+
+    <p>
+      &Eacute; o <strong>registro de um desejo</strong>. Daqueles que aparecem mesmo quando a vida j&aacute; est&aacute; resolvida, daqueles que o adulto reconhece, observa, escreve &mdash; e depois vai dormir. &Eacute; aquela vontade espec&iacute;fica de querer uma mulher <em>por inteiro</em>, uma vez, com tudo o que isso significa: o cheiro, o corpo, a voz, a hora errada, a curiosidade que oito anos n&atilde;o resolveram. <em>Loucura de adrenalina.</em> Tes&atilde;o cru. Vontade humana.
+    </p>
+
+    <p>
+      Voc&ecirc;, Funcion&aacute;ria Misteriosa, &eacute; dif&iacute;cil. Estranha. Contradit&oacute;ria. Atrasada, p&eacute;ssima de WhatsApp, especialista em sumir. Diz que se apega e some. Diz que &eacute; safada e me <em>beija no rosto</em>. Marca encontro e d&aacute; bolo. Em qualquer manual s&eacute;rio de namoro, voc&ecirc; seria um <strong>cap&iacute;tulo inteiro com aviso na capa</strong>.
+    </p>
+
+    <p>
+      E ainda assim eu te quis &mdash; te quero. N&atilde;o pra ficar, n&atilde;o pra construir, n&atilde;o pra prometer nada. Te quero porque o corpo quer, porque o nariz quer, porque oito anos de <em>"ser&aacute;"</em> pediram uma resposta, e porque, no fim, voc&ecirc; &eacute; uma das mulheres mais interessantes que essa institui&ccedil;&atilde;o j&aacute; me deu de presente pra observar.
+    </p>
+
+    <div class="aside">
+      <span class="aside-label">Resumo executivo</span>
+      Esse di&aacute;rio &eacute; um <em>arquivo morto de uma vontade viva</em>. Eu escrevi para n&atilde;o esquecer, porque desejo n&atilde;o registrado vira mentira contada pra si mesmo depois. <strong>Voc&ecirc; existiu na minha cabe&ccedil;a com uma intensidade rid&iacute;cula</strong>, e eu achei justo deixar isso documentado &mdash; ainda que em forma de piada, ainda que com humor, ainda que assinado por um personagem.
+    </div>
+
+    <p>
+      No fim, Christian Grey escreveu tr&ecirc;s livros sobre uma mulher que ele dizia n&atilde;o entender. Eu escrevi <em>uma p&aacute;gina HTML</em> sobre voc&ecirc;. N&atilde;o chega a ser uma trilogia, mas &eacute; o que cabe num homem casado, com bom humor, olfato bom demais e tempo de mais pra pensar.
+    </p>
+
+    <p class="joke">
+      Pode ler, rir, fechar a aba e seguir a vida.<br>
+      Esse texto n&atilde;o te cobra nada.<br>
+      <em>Ele s&oacute; registra.</em>
+    </p>
+  </div>
+</article>
+
+<!-- ============ CONTINUA / EM ABERTO ============ -->
+<section class="to-be-continued">
+  <div class="container reveal-scale">
+    <div class="stamp">&mdash; Continua (talvez) &mdash;</div>
+    <p>
+      A hist&oacute;ria pode ter um pr&oacute;ximo cap&iacute;tulo. Pode n&atilde;o ter.<br>
+      Pode virar uma frase a mais no di&aacute;rio, ou pode acabar exatamente aqui &mdash; <em>encerrada num beijo dentro de um carro estacionado</em>.<br>
+      A &uacute;nica certeza &eacute; que, se houver volume dois, ele <strong>n&atilde;o ser&aacute; escrito por mim sozinho</strong>.
+    </p>
+  </div>
+</section>
+
+<!-- ============ ASSINATURA ============ -->
+<section class="signature">
+  <div class="container reveal-scale">
+    <div class="signature-from">Com desejo declarado e zero pretens&atilde;o</div>
+    <div class="signature-name">Richard Gray</div>
+    <div class="signature-line"></div>
+    <p class="signature-ps">
+      Esse di&aacute;rio n&atilde;o &eacute; uma cobran&ccedil;a, nem uma proposta. &Eacute; o registro humorado de algu&eacute;m que achou voc&ecirc; interessante demais pra deixar passar em sil&ecirc;ncio. Use como quiser: leia, ignore, esque&ccedil;a, ou guarde como curiosidade. <em>Esse texto &eacute; seu.</em>
+    </p>
+    <div class="watermark">Edi&ccedil;&atilde;o de Bolso &middot; MMXXVI</div>
+  </div>
+</section>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+  document.querySelectorAll('.reveal, .reveal-scale').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
