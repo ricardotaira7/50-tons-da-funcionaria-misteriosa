@@ -555,7 +555,148 @@
     }
   }
 
-  /* ============ PLAYER DE MÚSICA ============ */
+  /* ============ CAPÍTULO FINAL ============ */
+  .chapter-final .chapter-title {
+    background: linear-gradient(180deg, var(--ink-strong), var(--steel));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .aside-message {
+    background: linear-gradient(180deg, rgba(20,20,26,0.7), rgba(14,14,18,0.85));
+    border-left: 3px solid var(--silver-glow);
+    border-right: 1px solid var(--border);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    padding: 28px 28px 24px;
+    margin: 36px 0;
+    border-radius: 6px;
+    position: relative;
+    font-style: normal;
+  }
+
+  .aside-message::before {
+    content: '\201C';
+    position: absolute;
+    top: -8px;
+    left: 18px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 70px;
+    color: var(--silver);
+    opacity: 0.25;
+    line-height: 1;
+  }
+
+  .aside-message p {
+    color: var(--ink-body) !important;
+    font-style: italic;
+    font-size: clamp(16px, 4.2vw, 18px) !important;
+    line-height: 1.7 !important;
+    margin-bottom: 0 !important;
+  }
+
+  .aside-message .aside-label {
+    margin-bottom: 16px;
+  }
+
+  .joke-final {
+    text-align: center;
+    font-style: italic;
+    color: var(--silver-glow);
+    font-size: clamp(20px, 5vw, 26px) !important;
+    margin: 36px 0 !important;
+    padding: 24px 20px;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    font-family: 'Cormorant Garamond', serif;
+    line-height: 1.4;
+  }
+
+  .lead-final {
+    text-align: center;
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: clamp(28px, 7vw, 38px) !important;
+    color: var(--ink-strong) !important;
+    margin: 50px 0 !important;
+    background: linear-gradient(180deg, var(--silver-glow), var(--silver));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: 0.05em;
+  }
+
+  .signature-inline {
+    text-align: center;
+    font-style: italic;
+    color: var(--ink-mute) !important;
+    font-size: clamp(16px, 4vw, 18px) !important;
+    padding: 30px 0 10px;
+    max-width: 560px;
+    margin: 0 auto !important;
+  }
+
+  .stamp-final {
+    color: var(--ink-strong);
+    border-color: var(--silver-glow);
+    letter-spacing: 0.6em;
+    padding: 16px 36px;
+  }
+
+  /* ============ CAPÍTULO FANTASIA ============ */
+  .chapter-fantasy .chapter-title {
+    background: linear-gradient(180deg, var(--silver-glow), var(--accent));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .aside-warning {
+    border-left: 3px solid var(--accent);
+    background: linear-gradient(90deg, rgba(184, 157, 122, 0.08), transparent);
+  }
+
+  .aside-warning .aside-label {
+    color: var(--accent-glow);
+  }
+
+  .aside-dialogue {
+    background: linear-gradient(180deg, rgba(20,20,26,0.7), rgba(14,14,18,0.85));
+    border-left: 3px solid var(--silver);
+    border-radius: 6px;
+    padding: 22px 24px;
+    margin: 28px 0;
+  }
+
+  .aside-dialogue p {
+    color: var(--ink-strong) !important;
+    font-style: italic;
+    font-size: clamp(17px, 4.4vw, 19px) !important;
+    line-height: 1.6 !important;
+    margin: 0 0 10px 0 !important;
+    padding-left: 14px;
+    border-left: 2px solid var(--border);
+  }
+
+  .aside-dialogue p:last-child { margin-bottom: 0 !important; }
+
+  .aside-special {
+    border-left: 3px solid var(--accent-glow);
+    background: linear-gradient(135deg, rgba(184, 157, 122, 0.1), rgba(20,20,26,0.5));
+    text-align: center;
+  }
+
+  .dramatic-pause {
+    text-align: center;
+    font-size: clamp(22px, 5.5vw, 28px) !important;
+    color: var(--silver-glow) !important;
+    margin: 30px 0 !important;
+    letter-spacing: 0.02em;
+    font-weight: 500;
+  }
+
+
   #music-player-frame {
     position: fixed;
     bottom: -200px;
@@ -1274,6 +1415,308 @@
   </div>
 </article>
 
+
+
+<!-- ============ CAPÍTULO XIII - A FANTASIA (FIM ALTERNATIVO) ============ -->
+<article class="chapter chapter-fantasy">
+  <div class="container reveal">
+    <div class="chapter-num">Cap&iacute;tulo XIII &middot; fim alternativo</div>
+    <h2 class="chapter-title">A Noite no Hotel</h2>
+    <div class="chapter-deck">o final que eu escrevi na minha cabe&ccedil;a, antes do final que ela escreveu</div>
+
+    <div class="aside aside-warning">
+      <span class="aside-label">Aviso ao leitor</span>
+      Este cap&iacute;tulo &eacute; <em>fic&ccedil;&atilde;o pura</em>. &Eacute; a vers&atilde;o que eu queria que tivesse acontecido. &Eacute; a hist&oacute;ria que eu reescrevi pra mim mesmo nos minutos antes de aceitar a hist&oacute;ria de verdade. Considere isso o que &eacute;: <strong>um sonho registrado em letra impressa</strong>. O cap&iacute;tulo seguinte, esse sim, &eacute; o que aconteceu.
+    </div>
+
+    <p class="lead">
+      Era meio-dia e ela ainda n&atilde;o tinha respondido. Sobre o pr&oacute;ximo encontro, sobre o que far&iacute;amos, sobre nada. Mas eu j&aacute; sabia: ela odeia mensagem, ela vive no fuso pr&oacute;prio dela, e eu n&atilde;o ia ench&ecirc;-la. <em>Deixei o espa&ccedil;o dela ser dela.</em>
+    </p>
+
+    <p>
+      <strong>Plim.</strong>
+    </p>
+
+    <p>
+      A mensagem chegou. Parece que ela tinha sentido, pelo ar, o que eu queria.
+    </p>
+
+    <div class="aside aside-dialogue">
+      <span class="aside-label">Ela</span>
+      <p>"Vamos ver um filme hoje? S&oacute; passar a noite juntos, mas sem sexo. Queria s&oacute; conversar. N&atilde;o queria que fosse na sua casa nem na minha, nem no carro, nem em motel."</p>
+    </div>
+
+    <p>
+      Eu li tr&ecirc;s vezes. Ela tinha eliminado, de uma s&oacute; mensagem, todos os lugares que eu tinha cogitado mentalmente nos &uacute;ltimos meses. <em>Performance de elimina&ccedil;&atilde;o impec&aacute;vel.</em> Mas eu sou de TI, sou resolvedor de problema com restri&ccedil;&atilde;o. Adaptei na hora.
+    </p>
+
+    <div class="aside aside-dialogue">
+      <span class="aside-label">Eu</span>
+      <p>"Mas que pergunta &mdash; claro que vamos. Voc&ecirc; cortou todos os lugares, mas que tal a gente fingir que &eacute; um casal em viagem? Reservo um hotel ali, pe&ccedil;o uma comida, a gente relaxa, conversa, sem agenda."</p>
+      <span class="aside-label" style="margin-top:14px;">Ela</span>
+      <p>"Pode ser. Me busca &agrave;s 21?"</p>
+      <span class="aside-label" style="margin-top:14px;">Eu</span>
+      <p>"&Agrave;s 21 estou na sua porta."</p>
+    </div>
+
+    <p>
+      Que feriado de merda eu estava tendo at&eacute; aquele momento &mdash; em casa estudando, trabalhando, sem ningu&eacute;m em volta, com frio do car&ccedil;a entrando pela janela. E agora, do nada, eu ia passar a noite debaixo de uma coberta com ela, conversando, comendo, rindo. <strong>Salvou meu feriado em uma mensagem.</strong>
+    </p>
+
+    <p>
+      Me arrumei. N&atilde;o me depilei, n&atilde;o passei perfume diferente, n&atilde;o fiz nada que sugerisse expectativa &mdash; ela j&aacute; tinha deixado claro o cont&eacute;udo da noite: <em>sem sexo</em>. Eu respeitaria. S&oacute; quis n&atilde;o parecer um cara mal-arrumado de feriado. Camisa decente, perfume normal, &aacute;gua na cara.
+    </p>
+
+    <div class="aside">
+      <span class="aside-label">Check-in</span>
+      Cheguei na recep&ccedil;&atilde;o do hotel, ela do meu lado, e soltei pro recepcionista com a maior cara de pau: <em>"Reserva pra mim e minha esposa."</em> Ela me olhou e segurou o riso. Entrou na brincadeira. <strong>Sr. e Sra. Gray, quarto 810, oitavo andar.</strong>
+    </div>
+
+    <p>
+      O quarto era menor do que parecia nas fotos do site &mdash; coisa cl&aacute;ssica de hotel &mdash;, mas era aquecido, tinha TV, tinha cama boa, tinha tudo o que duas pessoas precisariam pra ter uma noite tranquila. Pedimos comida. Conversamos. Comemos. Rimos. Horas e horas sem ningu&eacute;m olhar pro rel&oacute;gio, sem cron&ocirc;metro, sem <em>"tenho que ir"</em>. Pela primeira vez desde que eu a conhecia, ela parecia estar ali sem pressa de sair.
+    </p>
+
+    <p>
+      N&atilde;o teve beijo. N&atilde;o teve aproxima&ccedil;&atilde;o for&ccedil;ada. Foi um casal de amigos &mdash; estranhos, sim, mas amigos. E perto da uma da manh&atilde;, ela soltou que estava com sono. Coroa que dorme cedo. Eu falei <em>"durma"</em>, e ela dormiu.
+    </p>
+
+    <div class="aside">
+      <span class="aside-label">Constata&ccedil;&atilde;o not&aacute;vel</span>
+      Ela <strong>ronca</strong>. Ronca pesado. Como uma mulher t&atilde;o bonita ronca daquele jeito &eacute; um dos enigmas que esse di&aacute;rio jamais vai resolver. Mas o cheiro dela enche o quarto e compensa o &aacute;udio. <em>Meu deus do c&eacute;u, esse cheiro.</em>
+    </div>
+
+    <p>
+      Como eu ia dormir do lado dela, na mesma coberta, sem encostar? Quest&atilde;o filos&oacute;fica. Deitei em posi&ccedil;&atilde;o de defunto em caix&atilde;o &mdash; m&atilde;os cruzadas sobre o peito, corpo r&iacute;gido, respira&ccedil;&atilde;o controlada, paralisado para n&atilde;o violar nenhum dos protocolos de seguran&ccedil;a estabelecidos por ela.
+    </p>
+
+    <p>
+      Uma hora se passou. Eu escutando ela roncar e o tes&atilde;o subindo pelo simples fato de ela existir ao meu lado. Levantei. Fui pro banheiro tomar um banho quente pra tentar relaxar essa fogueira.
+    </p>
+
+    <div class="aside aside-special">
+      <span class="aside-label">A&iacute; o sonho come&ccedil;ou de verdade</span>
+      Tudo o que voc&ecirc; vai ler agora aconteceu na minha cabe&ccedil;a antes de eu acordar. Mas, na cabe&ccedil;a de quem escreve, <em>tudo &eacute; verdade enquanto dura</em>.
+    </div>
+
+    <p>
+      O banheiro emba&ccedil;ou. Vapor cobrindo tudo, &aacute;gua quente caindo nas minhas costas, eu de olhos fechados tentando esquecer o cheiro dela. De repente, vi atrav&eacute;s do box emba&ccedil;ado uma silhueta entrando no banheiro. Achei que ela tinha vindo s&oacute; usar o vaso e ir embora. Fiquei parado, sil&ecirc;ncio absoluto. Ela n&atilde;o me via, eu n&atilde;o me mexia.
+    </p>
+
+    <p>
+      Mas ela n&atilde;o estava ali pra usar o vaso.
+    </p>
+
+    <p>
+      Ela tirou a roupa, devagar, e abriu o box.
+    </p>
+
+    <p class="dramatic-pause">
+      <em>Puta que pariu.</em>
+    </p>
+
+    <p>
+      Aquilo n&atilde;o existia no mundo real. Aquilo era cena de filme &mdash; ou de conto escrito por mim mesmo, e eu sabia disso. <em>Eu sabia.</em> Mas o sonho insistia em continuar, e eu n&atilde;o ia interromp&ecirc;-lo por nada.
+    </p>
+
+    <div class="aside aside-dialogue">
+      <span class="aside-label">Ela, dentro do box, &aacute;gua quente entre n&oacute;s</span>
+      <p>"S&oacute; uma vez. Depois disso, n&atilde;o rola mais nada. Voc&ecirc; aceita?"</p>
+    </div>
+
+    <p>
+      Eu n&atilde;o respondi com palavras. Agarrei ela e a beijei como quem espera oito anos pra fazer alguma coisa. Beijo sufocante. Beijo de quem tinha guardado fome demais. Comecei descendo a m&atilde;o pelo corpo dela e parei no meio do caminho &mdash; instinto antigo de pedir permiss&atilde;o, sabe? Ela leu o gesto.
+    </p>
+
+    <div class="aside aside-dialogue">
+      <span class="aside-label">Ela</span>
+      <p>"Faz o que voc&ecirc; sempre quis. <em>N&atilde;o precisa pedir permiss&atilde;o pra nada.</em>"</p>
+    </div>
+
+    <p>
+      Pronto. A cerca el&eacute;trica caiu. O decreto pessoal foi revogado. A zona militar virou zona livre. E eu, que tinha imaginado aquele momento centenas de vezes, agora n&atilde;o sabia por onde come&ccedil;ar &mdash; <em>tipo aquele cara que ganha na loteria e fica parado no caixa sem saber qual conta pagar primeiro</em>.
+    </p>
+
+    <p>
+      Comecei devagar. Toquei o que sempre quis tocar, sem pressa, com a inten&ccedil;&atilde;o de quem decora cada cent&iacute;metro. Puxei ela pra perto, peito contra peito, pra ela sentir o quanto eu estava acelerado &mdash; meu cora&ccedil;&atilde;o batendo num ritmo que faria meu Apple Watch chamar a ambul&acirc;ncia. Beijei o pesco&ccedil;o. Cheirei. <em>Cheirei muito.</em> A hiperosmia agradeceu o presente da vida inteira. Desci a boca por todo aquele corpo que tinha sido proibido por meses, e fui descobrindo o que cada peda&ccedil;o dela respondia, no tempo dela, com a inten&ccedil;&atilde;o que ela queria.
+    </p>
+
+    <p>
+      Cheguei onde eu sempre tinha imaginado chegar. <strong>E pasmem:</strong> ela j&aacute; me esperava por dentro, e n&atilde;o era da &aacute;gua, n&atilde;o era do vapor, n&atilde;o era do clima do banheiro. <em>Era ela.</em> Ent&atilde;o sim, ela sentia o que eu sentia &mdash; s&oacute; sabia esconder com uma maestria que eu jamais consegui.
+    </p>
+
+    <p>
+      Provei. Com sede de oito anos. Era o mel que eu tinha imaginado, e era melhor, porque o real (mesmo sendo sonho) sempre passa o imaginado quando as coisas funcionam. Ela come&ccedil;ou a soltar som &mdash; m&uacute;sica feita pro meu ouvido, num registro que nenhuma trilha sonora vai conseguir reproduzir.
+    </p>
+
+    <div class="aside">
+      <span class="aside-label">Interl&uacute;dio t&eacute;cnico</span>
+      A&iacute; a &aacute;gua come&ccedil;ou a esfriar nas minhas costas. <em>Hotel com limite de aquecedor, claro &mdash; minha vida vira piada at&eacute; nos sonhos.</em> Pausa estrat&eacute;gica. Desliguei o chuveiro, puxei ela pela m&atilde;o, n&oacute;s dois encharcados, e levei pra cama.
+    </div>
+
+    <p>
+      Levei ela pra cama com cuidado de quem trata bem o que ama. Continuei o que tinha come&ccedil;ado, sem pressa nenhuma agora. Beijei cada cent&iacute;metro daquele corpo que tinha sido manchete proibida do meu di&aacute;rio. O cheiro dela enchia o quarto inteiro, misturado com vapor, com &aacute;gua, com tudo o que dois adultos colocam no ar quando o ar &eacute; s&oacute; deles. Voltei a prov&aacute;-la com mais inten&ccedil;&atilde;o ainda. Ela se contorcia. Eu intensificava. Em algum momento ela falou, com a voz embolada, <em>"vou gozar, n&atilde;o para"</em> &mdash; e eu, claro, n&atilde;o parei. Era exatamente onde eu queria chegar.
+    </p>
+
+    <p>
+      Ela chegou onde tinha que chegar. Forte. Verdadeira. <em>Inteira.</em> O que sobrou da minha alma deixou o corpo nesse momento &mdash; ver aquela mulher se entregando ao prazer por causa do que eu estava fazendo era pagamento integral por oito anos de espera.
+    </p>
+
+    <p>
+      Subi pelo corpo dela. Beijei a boca, o pesco&ccedil;o, voltei pra boca. Nossos corpos se encontraram do jeito que tinham que se encontrar. E o que aconteceu ali, n&oacute;s dois j&aacute; sabemos &mdash; n&atilde;o cabe em palavra, foi linguagem em outro idioma. Foi <em>aquele</em> idioma.
+    </p>
+
+    <p>
+      E ent&atilde;o eu fiz uma coisa que ningu&eacute;m esperava &mdash; <strong>eu parei</strong>. Diminui o ritmo, recuei, e voltei a beijar ela com calma, acariciando o corpo dela devagar. Ela queria mais. <em>Pediu mais.</em>
+    </p>
+
+    <div class="aside aside-dialogue">
+      <span class="aside-label">Eu</span>
+      <p>"N&atilde;o."</p>
+      <p>"Voc&ecirc; acabou de desbloquear o <strong>n&iacute;vel 1</strong>. Os pr&oacute;ximos n&iacute;veis voc&ecirc; tem que sair comigo de novo pra desbloquear. Um por encontro. Regra da casa."</p>
+    </div>
+
+    <p>
+      Ela entendeu a indireta &mdash; a vingan&ccedil;a po&eacute;tica do "talvez" e dos n&iacute;veis que ela tinha inventado pra mim no posto de gasolina. Deu um sorriso de canto, daqueles de quem reconhece o golpe e respeita. Deitou a cabe&ccedil;a no meu peito. Sil&ecirc;ncio. Respira&ccedil;&otilde;es ofegantes voltando ao normal. Puxei a coberta sobre n&oacute;s dois.
+    </p>
+
+    <div class="aside aside-dialogue">
+      <span class="aside-label">Ela, sussurrando no meu peito</span>
+      <p>"Obrigada por me tratar bem e respeitar meus limites."</p>
+      <p>"Obrigada por essa noite incr&iacute;vel."</p>
+      <p>"Talvez eu volte atr&aacute;s do que eu disse antes. Talvez esse n&atilde;o seja nosso &uacute;ltimo encontro, ta bom?"</p>
+      <span class="aside-label" style="margin-top:14px;">Eu</span>
+      <p>"Ta bom."</p>
+    </div>
+
+    <p>
+      Ela sorriu de canto outra vez. Encostou de volta no meu peito. Adormeceu ali, devagar.
+    </p>
+
+    <p class="joke-final">
+      Eu n&atilde;o cheguei a gozar. N&atilde;o teve tempo, n&atilde;o teve oportunidade, n&atilde;o teve necessidade.<br>
+      <em>Mas ter ouvido ela gozar pra mim valeu mais que qualquer gozada minha.</em><br>
+      Tem prazeres que n&atilde;o se medem em volume nem em fluido. Esse foi um deles.
+    </p>
+
+    <p class="lead-final">
+      Acordei cedo.
+    </p>
+
+    <p>
+      Ela n&atilde;o estava ali.
+    </p>
+
+    <p>
+      Olhei pro lado. Cama vazia. Coberta intacta do lado dela. Sem perfume residual de mulher dormindo. Sem cabelo no travesseiro. <em>Nada.</em>
+    </p>
+
+    <p>
+      Foi um sonho.
+    </p>
+
+    <p>
+      Tudo aquilo. O hotel, o filme, a conversa, o banho, o gozo, o "talvez n&atilde;o seja o &uacute;ltimo encontro" &mdash; <strong>tudo. Sonho.</strong> Bonito demais pra ser verdadeiro, e foi exatamente isso que ele provou ser. Bonito demais. Nada mais.
+    </p>
+
+    <p>
+      Olhei o celular. Tinha uma mensagem dela. Cedo. Respondi correndo. Sem resposta de volta &mdash; ela &eacute; assim, j&aacute; sei. Mandei outra pergunta perguntando se ter&iacute;amos um pr&oacute;ximo encontro.
+    </p>
+
+    <p class="signature-inline">
+      E a&iacute; veio a resposta de verdade. <em>A que entra no pr&oacute;ximo cap&iacute;tulo.</em>
+    </p>
+  </div>
+</article>
+
+<div class="container"><div class="divider"><span>&middot; &middot; &middot;</span></div></div>
+
+<!-- ============ CAPÍTULO XIV - O FIM REAL ============ -->
+<article class="chapter chapter-final">
+  <div class="container reveal">
+    <div class="chapter-num">Cap&iacute;tulo XIV &middot; o de verdade</div>
+    <h2 class="chapter-title">O Fim</h2>
+    <div class="chapter-deck">e &agrave;s vezes a hist&oacute;ria simplesmente acaba</div>
+
+    <p class="lead">
+      Acabou, amigos.
+    </p>
+
+    <p>
+      No dia em que eu esperava um convite &mdash; ou pelo menos uma insinua&ccedil;&atilde;o de que ela quereria passar uma noite comigo, sem cron&ocirc;metro, sem cerca el&eacute;trica, sem os trinta minutos no rel&oacute;gio &mdash; eu recebi outra coisa. Recebi a mensagem que encerra um cap&iacute;tulo. Recebi a mensagem que <em>encerra o livro</em>.
+    </p>
+
+    <div class="aside aside-message">
+      <span class="aside-label">A mensagem dela &middot; o que ela disse, em ess&ecirc;ncia</span>
+      <p style="margin: 12px 0;">"Andei pensando bastante nisso a&iacute;. Pesando os dois lados, sabe? Voc&ecirc; sabe que eu tenho vontade. Tem hora que d&aacute; aquela vontade de mandar tudo &agrave; merda e deixar acontecer."</p>
+      <p style="margin: 12px 0;">"S&oacute; que, por mais que eu queira, acho que o melhor mesmo &eacute; a gente n&atilde;o se envolver."</p>
+      <p style="margin: 12px 0;">"Sendo bem honesta com voc&ecirc;: nosso trabalho j&aacute; me rendeu situa&ccedil;&otilde;es bem desagrad&aacute;veis no passado. Voc&ecirc; sabe&hellip; a mais recente foi com a <strong>Funcion&aacute;ria Chatonilda</strong> &mdash; deu tanta confus&atilde;o que ela foi demitida. E j&aacute; me colocaram em hist&oacute;ria com homem que eu nem conhe&ccedil;o direito, gente que apareceu como meu caso e que eu nunca toquei na vida. Boato que correu como verdade, sabe?"</p>
+      <p style="margin: 12px 0;">"Pra mulher, esse tipo de coisa pesa de um jeito diferente. Pro homem, &agrave;s vezes vira anedota de mesa de bar, fama de pegador, hist&oacute;ria pra contar com orgulho. Pra mulher, geralmente vira marca que demora a sair."</p>
+      <p style="margin: 12px 0;">"E eu n&atilde;o quero tomar uma decis&atilde;o agora que depois venha me cobrar em forma de culpa, de arrependimento, ou que ainda por cima estrague o nosso conv&iacute;vio l&aacute; no trabalho."</p>
+      <p style="margin: 12px 0;">"Isso n&atilde;o tira nada do quanto eu gosto de voc&ecirc;, do quanto te admiro, do respeito que eu tenho. Eu n&atilde;o quero que a nossa rela&ccedil;&atilde;o mude por causa disso, n&atilde;o quero que fique aquele clima esquisito entre n&oacute;s."</p>
+      <p style="margin: 12px 0;">"Voc&ecirc; me entende? 😕"</p>
+    </div>
+
+    <p>
+      Eu li. Reli. Li mais uma vez. E entendi.
+    </p>
+
+    <p>
+      Ela tinha raz&atilde;o em cada uma daquelas linhas. <strong>Em cada uma.</strong> O peso que cai sobre uma mulher no nosso trabalho n&atilde;o &eacute; o mesmo que cai sobre um homem &mdash; isso n&atilde;o &eacute; opini&atilde;o, &eacute; mat&eacute;ria de observa&ccedil;&atilde;o pura. Eu, no pior dos cen&aacute;rios, viraria fofoca de corredor por uns dois meses. Ela viraria <em>caso</em>. Viraria assunto. Viraria a hist&oacute;ria que algu&eacute;m do RH ainda ia repetir cinco anos depois com uma sobrancelha levantada.
+    </p>
+
+    <p>
+      Ela viu o c&aacute;lculo direito. Viu o que eu, no auge do tes&atilde;o, n&atilde;o quis ver. E foi adulta o suficiente pra puxar o freio antes que o carro descesse a ladeira. <em>Eu, no lugar dela, talvez n&atilde;o tivesse coragem de fazer o mesmo.</em>
+    </p>
+
+    <div class="aside">
+      <span class="aside-label">O que poderia ter sido</span>
+      Poderia ter sido um filme num lugar escondido. Poderia ter sido um c&eacute;u estrelado, daqueles que a gente esquece de olhar quando est&aacute; ocupado demais querendo coisa. Poderia ter sido conversa boba at&eacute; de madrugada, das que voc&ecirc; n&atilde;o v&ecirc; o tempo passar, das que terminam com a manh&atilde; chegando sem ningu&eacute;m pedir. Poderia ter sido a noite de hotel inteira que eu escrevi no cap&iacute;tulo anterior &mdash; <em>e voc&ecirc; agora sabe que aquilo nunca aconteceu.</em>
+    </div>
+
+    <p>
+      Apenas respeitei. Engoli seco a falta da &aacute;gua que a boca dela vai me fazer. Engoli o cheiro que eu n&atilde;o vou mais ter o direito de decifrar de perto. Engoli o "talvez" que ela j&aacute; me tinha dado e que agora virou um "n&atilde;o" definitivo, embrulhado em papel de seda e amarrado com fita prata.
+    </p>
+
+    <p>
+      Porque homem que se preze respeita a decis&atilde;o da mulher. Sempre. Mesmo quando o tes&atilde;o protesta. Mesmo quando o corpo discorda. Mesmo quando o nariz, traidor, continua sentindo o cheiro dela na mem&oacute;ria como se ela tivesse acabado de passar.
+    </p>
+
+    <p class="joke-final">
+      E que mulher, amigos&hellip;<br>
+      <em>Que mulher.</em>
+    </p>
+
+    <p>
+      Respondi com alguns &aacute;udios. Concordei. Falei o que precisava ser falado &mdash; o m&iacute;nimo, o adulto, o digno. <strong>O resto eu guardei.</strong> Tudo o que eu queria ter dito ainda, tudo o que eu queria ter feito, tudo o que eu queria ter sentido com ela em um cen&aacute;rio paralelo onde nada dessa lista de pr&oacute;s e contras existisse &mdash; isso ficou comigo. Vai ficar comigo. E acabou virando o cap&iacute;tulo anterior desse di&aacute;rio, que &eacute; o &uacute;nico lugar onde aquela noite no hotel vai existir um dia.
+    </p>
+
+    <p>
+      Porque &agrave;s vezes nem todo sentimento precisa ser falado. &Agrave;s vezes o melhor &eacute; <em>guardar pra si e seguir em frente</em>. Adulto bom aprende a fazer isso com o tempo &mdash; e eu, com vinte e nove, estou aprendendo agora.
+    </p>
+
+    <div class="aside">
+      <span class="aside-label">O pedido final</span>
+      Que eu consiga construir com ela uma amizade tranquila. De verdade. Sem peso, sem mal-entendido, sem aquela coisa esquisita que sobra quando dois adultos sabem o que <em>quase</em> aconteceu entre eles. Tarefa dif&iacute;cil, n&atilde;o por culpa dela &mdash; por culpa do meu nariz, que continua trai&ccedil;oeiro, continua sentindo aquele cheiro filho da puta de bom que ela exala. <em>Puts, s&oacute; de pensar j&aacute; come&ccedil;o a desviar o assunto que era pra finalizar.</em>
+    </div>
+
+    <p>
+      Foco. Termina, Richard. <strong>Termina.</strong>
+    </p>
+
+    <p class="lead-final">
+      Acabou. Fim. <em>Good bye.</em>
+    </p>
+
+    <p>
+      As outras hist&oacute;rias que eu tenho guardadas em outros di&aacute;rios costumam acabar com final feliz. Esta n&atilde;o. Esta termina exatamente onde ela quis que terminasse &mdash; <em>e tudo bem assim</em>. Hist&oacute;ria de verdade nem sempre tem volume dois. &Agrave;s vezes o volume um basta. &Agrave;s vezes ele &eacute; tudo o que existiu, tudo o que vai existir, e tudo o que precisa existir.
+    </p>
+
+    <p class="signature-inline">
+      Encerrado, ent&atilde;o, com a digna honra de quem foi recusado por uma mulher inteira, l&uacute;cida e generosa o suficiente pra dizer "n&atilde;o" antes que o "sim" estragasse alguma coisa importante.
+    </p>
+  </div>
+</article>
+
 <div class="container"><div class="divider"><span>&middot; &middot; &middot;</span></div></div>
 
 <!-- ============ OS 50 TONS ============ -->
@@ -1296,18 +1739,21 @@
       <li><strong>Cinza "safada":</strong> dito pela boca dela. Demonstrado em parte.</li>
       <li><strong>Cinza zona militar:</strong> grande parte do corpo. Acesso restrito por decreto pessoal.</li>
       <li><strong>Cinza provoca&ccedil;&atilde;o:</strong> a cor predominante. O tom mestre de toda a paleta.</li>
+      <li><strong>Cinza fim:</strong> a cor da &uacute;ltima mensagem. Madura, ponderada, definitiva.</li>
     </ol>
   </div>
 </article>
 
-<!-- ============ CONTINUA / EM ABERTO ============ -->
+<div class="container"><div class="divider"><span>&middot; &middot; &middot;</span></div></div>
+
+<!-- ============ CARIMBO FINAL ============ -->
 <section class="to-be-continued">
   <div class="container reveal-scale">
-    <div class="stamp">&mdash; Continua (talvez) &mdash;</div>
+    <div class="stamp stamp-final">&mdash; Fim &mdash;</div>
     <p>
-      A hist&oacute;ria pode ter um pr&oacute;ximo cap&iacute;tulo. Pode n&atilde;o ter.<br>
-      Pode virar uma frase a mais no di&aacute;rio, ou pode acabar exatamente aqui &mdash; <em>encerrada num beijo dentro de um carro estacionado</em>.<br>
-      A &uacute;nica certeza &eacute; que, se houver volume dois, ele <strong>n&atilde;o ser&aacute; escrito por mim sozinho</strong>.
+      Sem volume dois.<br>
+      Sem continua&ccedil;&atilde;o.<br>
+      <em>S&oacute; o sil&ecirc;ncio digno depois do ponto final.</em>
     </p>
   </div>
 </section>
