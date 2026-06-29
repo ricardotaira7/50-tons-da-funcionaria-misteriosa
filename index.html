@@ -591,6 +591,23 @@
     }
   }
 
+  /* FALLBACK CRÍTICO: garante que o conteúdo SEMPRE apareça, mesmo se o
+     IntersectionObserver falhar (bug conhecido do Safari iOS em páginas longas).
+     Sem isso, capítulos no meio do documento podem ficar presos invisíveis. */
+  @media (max-width: 600px) {
+    .reveal, .reveal-scale {
+      opacity: 1 !important;
+      transform: none !important;
+    }
+  }
+
+  /* Se o JS não rodar (no-js), tudo visível em qualquer tela */
+  .no-js .reveal,
+  .no-js .reveal-scale {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
   /* ============ CAPÍTULO FINAL ============ */
   .chapter-final .chapter-title {
     background: linear-gradient(180deg, var(--ink-strong), var(--steel));
@@ -2403,16 +2420,47 @@
 </script>
 
 <script>
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-        observer.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+  (function() {
+    var els = document.querySelectorAll('.reveal, .reveal-scale');
 
-  document.querySelectorAll('.reveal, .reveal-scale').forEach(el => observer.observe(el));
+    // Se o navegador não suporta IntersectionObserver, mostra tudo na hora
+    if (!('IntersectionObserver' in window)) {
+      els.forEach(function(el){ el.classList.add('visible'); });
+      return;
+    }
+
+    var observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.05, rootMargin: '0px 0px 200px 0px' });
+
+    els.forEach(function(el){ observer.observe(el); });
+
+    // FAILSAFE: a cada scroll, verifica se algum elemento já está visível
+    // na tela mas não foi marcado (cobre falhas do observer no Safari iOS).
+    function revealNearby() {
+      var vh = window.innerHeight;
+      els.forEach(function(el){
+        if (el.classList.contains('visible')) return;
+        var r = el.getBoundingClientRect();
+        if (r.top < vh + 300) {
+          el.classList.add('visible');
+        }
+      });
+    }
+    window.addEventListener('scroll', revealNearby, { passive: true });
+    window.addEventListener('resize', revealNearby, { passive: true });
+
+    // Rede de segurança final: depois de 4 segundos, garante que TODO
+    // elemento já carregado fique visível, aconteça o que acontecer.
+    setTimeout(function(){
+      els.forEach(function(el){ el.classList.add('visible'); });
+    }, 4000);
+  })();
 </script>
 
 </body>
