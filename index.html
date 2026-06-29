@@ -30,12 +30,19 @@
 
   html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
 
+  /* Impede qualquer elemento de estourar a largura da tela no mobile */
+  body, .container, .chapter, .aside, .aside p, .chapter p {
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    max-width: 100%;
+  }
+
   body {
     font-family: 'Cormorant Garamond', Georgia, serif;
     background: var(--bg-deep);
     color: var(--ink-body);
     line-height: 1.7;
-    font-size: 21px;
+    font-size: 23px;
     overflow-x: hidden;
     background-image:
       radial-gradient(ellipse at top, rgba(90, 90, 100, 0.18), transparent 50%),
@@ -250,7 +257,7 @@
     font-family: 'Cormorant Garamond', serif;
     font-weight: 600;
     font-style: italic;
-    font-size: clamp(32px, 7.5vw, 44px);
+    font-size: clamp(34px, 7.5vw, 46px);
     color: var(--ink-strong);
     text-align: center;
     line-height: 1.15;
@@ -263,7 +270,7 @@
   }
 
   .chapter-deck {
-    font-size: 16px;
+    font-size: 17px;
     color: var(--ink-mute);
     text-align: center;
     font-style: italic;
@@ -273,7 +280,7 @@
 
   .chapter p {
     margin-bottom: 20px;
-    font-size: clamp(19px, 4.8vw, 22px);
+    font-size: clamp(21px, 5vw, 24px);
     color: var(--ink-body);
     line-height: 1.75;
   }
@@ -307,7 +314,7 @@
     margin: 32px 0;
     font-style: italic;
     color: var(--ink-body);
-    font-size: clamp(17px, 4.4vw, 19px);
+    font-size: clamp(19px, 4.6vw, 21px);
     border-radius: 0 4px 4px 0;
   }
 
@@ -326,7 +333,7 @@
     text-align: center;
     font-style: italic;
     color: var(--accent-glow);
-    font-size: clamp(17px, 4.4vw, 19px);
+    font-size: clamp(19px, 4.6vw, 21px);
     margin: 28px 0;
     padding: 18px 20px;
     border-top: 1px solid var(--border);
@@ -370,7 +377,7 @@
     position: relative;
     padding: 16px 0 16px 56px;
     border-bottom: 1px dashed var(--border);
-    font-size: clamp(17px, 4.4vw, 19px);
+    font-size: clamp(19px, 4.6vw, 21px);
     color: var(--ink-body);
     line-height: 1.6;
     transition: all 0.4s ease;
@@ -415,7 +422,7 @@
   .to-be-continued p {
     margin-top: 28px;
     font-style: italic;
-    font-size: clamp(17px, 4.4vw, 19px);
+    font-size: clamp(19px, 4.6vw, 21px);
     color: var(--ink-mute);
     max-width: 480px;
     margin-left: auto;
@@ -530,18 +537,47 @@
   }
 
   /* ============ MOBILE ============ */
-  @media (max-width: 480px) {
-    body { font-size: 19px; line-height: 1.72; }
-    .container { padding: 0 20px; }
-    .cover { padding: 40px 18px; }
-    .cover-frame { padding: 44px 22px; }
-    .chapter { padding: 56px 0; }
-    .chapter p { line-height: 1.72; }
-    .chapter p.lead::first-letter { font-size: 4em; }
-    .aside { padding: 18px; }
-    .epigraph { padding: 70px 18px; }
-    .signature { padding: 60px 18px 80px; }
-    .to-be-continued { padding: 50px 18px 20px; }
+  @media (max-width: 600px) {
+    body { font-size: 20px; line-height: 1.75; }
+    .container { padding: 0 18px; }
+    .cover { padding: 40px 16px; }
+    .cover-frame { padding: 40px 20px; }
+    .chapter { padding: 52px 0; }
+    .chapter p { font-size: 20px; line-height: 1.75; }
+    .chapter p.lead::first-letter { font-size: 3.8em; padding: 8px 10px 0 0; }
+    .chapter-title { font-size: clamp(30px, 8vw, 38px); }
+    .aside { padding: 18px 18px; font-size: 18px; }
+    .aside p { font-size: 18px !important; }
+    .aside-dialogue { padding: 18px 18px; }
+    .aside-dialogue p { font-size: 19px !important; padding-left: 10px; }
+    .aside-message { padding: 22px 18px 20px; }
+    .aside-message p { font-size: 18px !important; }
+    .epigraph { padding: 64px 16px; }
+    .signature { padding: 56px 16px 80px; }
+    .to-be-continued { padding: 48px 16px 20px; }
+    .joke, .joke-final { padding: 16px 14px; }
+    .tons-list li { padding-left: 48px; }
+  }
+
+  /* Ajuste fino para telas estreitas tipo iPhone 12 (390px) e menores */
+  @media (max-width: 414px) {
+    body { font-size: 19px; }
+    .container { padding: 0 16px; }
+    .chapter p { font-size: 19px; }
+    .chapter-title { font-size: clamp(27px, 8.5vw, 34px); line-height: 1.18; }
+    .chapter-deck { font-size: 15px; }
+    .aside { padding: 16px 16px; font-size: 17px; }
+    .aside p { font-size: 17px !important; }
+    .aside-label { font-size: 10px; letter-spacing: 0.25em; }
+    .aside-dialogue { padding: 16px 16px; }
+    .aside-dialogue p { font-size: 18px !important; padding-left: 9px; }
+    .aside-message { padding: 20px 16px 18px; }
+    .aside-message p { font-size: 17px !important; }
+    .dramatic-pause { font-size: clamp(20px, 6vw, 24px) !important; }
+    .lead-final { font-size: clamp(26px, 8vw, 32px) !important; }
+    .joke-final { font-size: 18px !important; }
+    .tons-list li { padding-left: 44px; font-size: 17px; }
+    .divider span { letter-spacing: 0.35em; }
   }
 
   @supports (-webkit-touch-callout: none) {
@@ -672,11 +708,12 @@
   .aside-dialogue p {
     color: var(--ink-strong) !important;
     font-style: italic;
-    font-size: clamp(17px, 4.4vw, 19px) !important;
-    line-height: 1.6 !important;
+    font-size: clamp(18px, 4.6vw, 20px) !important;
+    line-height: 1.65 !important;
     margin: 0 0 10px 0 !important;
-    padding-left: 14px;
+    padding-left: 12px;
     border-left: 2px solid var(--border);
+    overflow-wrap: break-word;
   }
 
   .aside-dialogue p:last-child { margin-bottom: 0 !important; }
